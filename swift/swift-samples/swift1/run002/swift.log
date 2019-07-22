@@ -1,0 +1,60 @@
+2019-06-28 14:48:57,899+0530 INFO  Loader JAVA Oracle Corporation OpenJDK 64-Bit Server VM 1.8.0_212
+2019-06-28 14:48:57,901+0530 INFO  Loader VERSION Swift 0.96.2 git-rev: b9611649002eecd640fc6c58bbb88cb35ce03539 heads/release-0.96-swift 6287
+2019-06-28 14:48:57,901+0530 INFO  Loader RUN_ID run002
+2019-06-28 14:48:57,901+0530 INFO  Loader ARGUMENTS [-runid, run002, -logfile, /home/amanda/swift-samples/swift1/run002/swift.log, p1.swift]
+2019-06-28 14:48:57,901+0530 INFO  Loader MAX_HEAP 954728448
+2019-06-28 14:48:57,901+0530 INFO  Loader GLOBUS_HOSTNAME amanda-pc
+2019-06-28 14:48:57,901+0530 INFO  Loader CWD /home/amanda/swift-samples/swift1/.
+2019-06-28 14:48:57,902+0530 DEBUG Loader SWIFT_CONFIGURATION 
+[D] /home/amanda/swift-0.96.2/etc/swift.conf
+[C] <Command Line>
+{
+	TCPPortRange: "50000, 50100"                               # [D] line 27
+	alwaysTransferWrapperLog: true                             # [D] line 61
+	executionRetries: 0                                        # [D] line 137
+	fileOperationsThrottle: 8                                  # [D] line 121
+	fileTransfersThrottle: 4                                   # [D] line 107
+	hostJobSubmitThrottle: 2                                   # [D] line 95
+	jobSubmitThrottle: 4                                       # [D] line 83
+	keepSiteDir: false                                         # [D] line 131
+	lazyErrors: true                                           # [D] line 41
+	logProvenance: false                                       # [D] line 200
+	maxForeachThreads: 16384                                   # [D] line 194
+	replicationEnabled: false                                  # [D] line 146
+	replicationLimit: 3                                        # [D] line 157
+	replicationMinQueueTime: 60                                # [D] line 153
+	site.local {
+		app.ALL.executable: "*"                                   # [D] line 232
+		execution.type: "local"                                   # [D] line 223
+		filesystem.type: "local"                                  # [D] line 226
+		workDirectory: "swiftwork"                                # [D] line 229
+	}
+	sites: [local]                                             # [D] line 236
+	tracingEnabled: false                                      # [D] line 51
+}
+
+2019-06-28 14:48:57,903+0530 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type outfile;
+file sims[];
+
+foreach i in [0:5] {
+   trace(i);
+   messagefile outfile[] <simple_mapper;prefix="baz",suffix=".txt",padding=2>;
+   outfile = writeData(i);
+  
+}
+
+
+
+2019-06-28 14:48:57,903+0530 DEBUG textfiles END SWIFTSCRIPT:
+2019-06-28 14:48:57,903+0530 INFO  Loader p1.swift: source file is new. Recompiling.
+2019-06-28 14:48:58,451+0530 DEBUG Loader Detailed exception:
+org.griphyn.vdl.karajan.CompilationException: Type file[] is not defined.
+	at org.griphyn.vdl.engine.Karajan.checkIsTypeDefined(Karajan.java:639)
+	at org.griphyn.vdl.engine.Karajan.variableForSymbol(Karajan.java:506)
+	at org.griphyn.vdl.engine.Karajan.statementForSymbol(Karajan.java:776)
+	at org.griphyn.vdl.engine.Karajan.statementsForSymbols(Karajan.java:761)
+	at org.griphyn.vdl.engine.Karajan.program(Karajan.java:415)
+	at org.griphyn.vdl.engine.Karajan.compile(Karajan.java:169)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:491)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:191)

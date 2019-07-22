@@ -1,0 +1,5 @@
+Swift 0.96.2 git-rev: b9611649002eecd640fc6c58bbb88cb35ce03539 heads/release-0.96-swift 6287
+RunID: run004
+Could not start execution:
+	Cannot resolve types, xs:schema @ p1.kml, line: 8:
+	No such type: file

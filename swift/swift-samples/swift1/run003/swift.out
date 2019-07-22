@@ -1,0 +1,5 @@
+Swift 0.96.2 git-rev: b9611649002eecd640fc6c58bbb88cb35ce03539 heads/release-0.96-swift 6287
+RunID: run003
+Could not start execution:
+	Compile error in foreach statement at line 4:
+	Type messagefile[] is not defined.

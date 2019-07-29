@@ -1,0 +1,38 @@
+Progress  2019-06-19 17:43:44.537153850+0530  LOG_START
+
+_____________________________________________________________________________
+
+        Wrapper (_swiftwrap)
+_____________________________________________________________________________
+
+Job directory mode is: link on shared filesystem
+PID=5001
+HOST=
+PWD=/home/amanda/swift-0.96.2/examples/swift/misc/swiftwork/hello-run001
+DIR=jobs/e/echo-j0oix49o
+EXEC=/bin/echo
+STDIN=
+STDOUT=stdout.txt
+STDERR=stderr.txt
+DIRS=
+INF=
+OUTF=
+COLLECT=
+CDM_FILE=
+ARGS=hi
+ARGC=1
+MPI_RANK=
+PMI_RANK=
+Progress  2019-06-19 17:43:44.542467568+0530  CREATE_JOBDIR
+Created job directory: jobs/e/echo-j0oix49o
+Progress  2019-06-19 17:43:44.544385249+0530  CREATE_INPUTDIR
+Progress  2019-06-19 17:43:44.546223664+0530  LINK_INPUTS
+Progress  2019-06-19 17:43:44.547904976+0530  EXECUTE
+APP_RESOURCES=real_secs:0.00,kernel_secs:0.00,user_secs:0.00,percent_cpu:?%,max_rss:1736,avg_rss:0,avg_tot_vm:0,avg_priv_data:0,avg_priv_stack:0,avg_shared_text:0,page_size:4096,major_pgfaults:0,minor_pgfaults:68,swaps:0,invol_context_switches:1,vol_waits:1,fs_reads:0,fs_writes:8,sock_recv:0,sock_send:0,signals:0,exit_status:0
+Moving back to workflow directory /home/amanda/swift-0.96.2/examples/swift/misc/swiftwork/hello-run001
+Progress  2019-06-19 17:43:44.553344681+0530  EXECUTE_DONE
+Job ran successfully
+Progress  2019-06-19 17:43:44.554145819+0530  MOVING_OUTPUTS 
+Progress  2019-06-19 17:43:44.554832991+0530  RM_JOBDIR
+Progress  2019-06-19 17:43:44.556231357+0530  TOUCH_SUCCESS
+Progress  2019-06-19 17:43:44.557595635+0530  END

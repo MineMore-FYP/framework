@@ -1,0 +1,97 @@
+2019-06-19 17:43:43,606+0530 INFO  Loader JAVA Oracle Corporation OpenJDK 64-Bit Server VM 1.8.0_212
+2019-06-19 17:43:43,608+0530 INFO  Loader VERSION Swift 0.96.2 git-rev: b9611649002eecd640fc6c58bbb88cb35ce03539 heads/release-0.96-swift 6287
+2019-06-19 17:43:43,608+0530 INFO  Loader RUN_ID run001
+2019-06-19 17:43:43,608+0530 INFO  Loader ARGUMENTS [-runid, run001, -logfile, /home/amanda/swift-0.96.2/examples/swift/misc/run001/swift.log, hello.swift]
+2019-06-19 17:43:43,608+0530 INFO  Loader MAX_HEAP 954728448
+2019-06-19 17:43:43,608+0530 INFO  Loader GLOBUS_HOSTNAME amanda-pc
+2019-06-19 17:43:43,608+0530 INFO  Loader CWD /home/amanda/swift-0.96.2/examples/swift/misc/.
+2019-06-19 17:43:43,609+0530 DEBUG Loader SWIFT_CONFIGURATION 
+[D] /home/amanda/swift-0.96.2/etc/swift.conf
+[C] <Command Line>
+{
+	TCPPortRange: "50000, 50100"                               # [D] line 27
+	alwaysTransferWrapperLog: true                             # [D] line 61
+	executionRetries: 0                                        # [D] line 137
+	fileOperationsThrottle: 8                                  # [D] line 121
+	fileTransfersThrottle: 4                                   # [D] line 107
+	hostJobSubmitThrottle: 2                                   # [D] line 95
+	jobSubmitThrottle: 4                                       # [D] line 83
+	keepSiteDir: false                                         # [D] line 131
+	lazyErrors: true                                           # [D] line 41
+	logProvenance: false                                       # [D] line 200
+	maxForeachThreads: 16384                                   # [D] line 194
+	replicationEnabled: false                                  # [D] line 146
+	replicationLimit: 3                                        # [D] line 157
+	replicationMinQueueTime: 60                                # [D] line 153
+	site.local {
+		app.ALL.executable: "*"                                   # [D] line 232
+		execution.type: "local"                                   # [D] line 223
+		filesystem.type: "local"                                  # [D] line 226
+		workDirectory: "swiftwork"                                # [D] line 229
+	}
+	sites: [local]                                             # [D] line 236
+	tracingEnabled: false                                      # [D] line 51
+}
+
+2019-06-19 17:43:43,609+0530 DEBUG textfiles BEGIN SWIFTSCRIPT:
+app echo (string s) { 
+   echo s; 
+}
+
+echo("hi");
+
+
+2019-06-19 17:43:43,609+0530 DEBUG textfiles END SWIFTSCRIPT:
+2019-06-19 17:43:43,609+0530 INFO  Loader hello.swift: source file is new. Recompiling.
+2019-06-19 17:43:44,362+0530 INFO  Loader RUN_START
+2019-06-19 17:43:44,365+0530 INFO  SwiftExecutor swift.home = /home/amanda/swift-0.96.2
+2019-06-19 17:43:44,394+0530 INFO  AbstractScheduler Setting resources to: {local=local}
+2019-06-19 17:43:44,402+0530 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2019-06-19 17:43:44,415+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-06-19 17:43:44,417+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-06-19 17:43:44,419+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-06-19 17:43:44,430+0530 INFO  RuntimeStats$ProgressTicker HeapMax: 954728448, CrtHeap: 124780544, UsedHeap: 21971736, JVMThreads: 16
+2019-06-19 17:43:44,431+0530 INFO  RuntimeStats$ProgressTicker 
+2019-06-19 17:43:44,433+0530 DEBUG swift PROCEDURE line=1 thread=R name=echo
+2019-06-19 17:43:44,434+0530 DEBUG swift JOB_INIT jobid=echo-j0oix49o tr=echo
+2019-06-19 17:43:44,435+0530 DEBUG swift JOB_SITE_SELECT jobid=echo-j0oix49o
+2019-06-19 17:43:44,440+0530 INFO  swift START host=local - Initializing shared directory
+2019-06-19 17:43:44,442+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-06-19 17:43:44,454+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-06-19 17:43:44,455+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-06-19 17:43:44,455+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-06-19 17:43:44,455+0530 INFO  swift END host=local - Done initializing shared directory
+2019-06-19 17:43:44,456+0530 DEBUG swift THREAD_ASSOCIATION jobid=echo-j0oix49o thread=R host=local replicationGroup=null
+2019-06-19 17:43:44,457+0530 INFO  swift START jobid=echo-j0oix49o host=local - Initializing directory structure
+2019-06-19 17:43:44,457+0530 INFO  swift END jobid=echo-j0oix49o - Done initializing directory structure
+2019-06-19 17:43:44,457+0530 INFO  swift START jobid=echo-j0oix49o - Staging in files []
+2019-06-19 17:43:44,458+0530 INFO  swift END jobid=echo-j0oix49o - Staging in finished
+2019-06-19 17:43:44,458+0530 DEBUG swift JOB_START jobid=echo-j0oix49o tr=echo arguments=[hi] tmpdir=hello-run001/jobs/e/echo-j0oix49o host=local
+2019-06-19 17:43:44,461+0530 INFO  Execute JOB_TASK jobid=echo-j0oix49o taskid=urn:R-1560946423621 exec=/bin/bash dir=hello-run001 args=shared/_swiftwrap echo-j0oix49o -jobdir e -scratch  -e echo -out stdout.txt -err stderr.txt -i -d  -if  -of  -cf  -cdmfile -status files -a hi
+2019-06-19 17:43:44,466+0530 INFO  Execute TASK_STATUS_CHANGE taskid=urn:R-1560946423621 status=8
+2019-06-19 17:43:44,469+0530 INFO  Execute TASK_STATUS_CHANGE taskid=urn:R-1560946423621 status=1
+2019-06-19 17:43:44,529+0530 INFO  Execute TASK_STATUS_CHANGE taskid=urn:R-1560946423621 status=2
+2019-06-19 17:43:44,571+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-06-19 17:43:44,571+0530 INFO  Execute TASK_STATUS_CHANGE taskid=urn:R-1560946423621 status=7
+2019-06-19 17:43:44,572+0530 DEBUG swift START jobid=echo-j0oix49o
+2019-06-19 17:43:44,572+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-06-19 17:43:44,573+0530 INFO  swift SUCCESS jobid=echo-j0oix49o - Success file found
+2019-06-19 17:43:44,573+0530 DEBUG swift STAGING_OUT jobid=echo-j0oix49o
+2019-06-19 17:43:44,573+0530 INFO  swift START jobid=echo-j0oix49o - Staging out files
+2019-06-19 17:43:44,573+0530 DEBUG swift stageouts: []
+2019-06-19 17:43:44,573+0530 INFO  swift END jobid=echo-j0oix49o - Staging out finished
+2019-06-19 17:43:44,574+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-06-19 17:43:44,574+0530 DEBUG swift JOB_END jobid=echo-j0oix49o
+2019-06-19 17:43:44,574+0530 INFO  swift END_SUCCESS thread=R tr=echo
+2019-06-19 17:43:44,574+0530 DEBUG swift PROCEDURE_END line=1 thread=R name=echo
+2019-06-19 17:43:44,576+0530 INFO  RuntimeStats$ProgressTicker HeapMax: 954728448, CrtHeap: 124780544, UsedHeap: 27500456, JVMThreads: 23
+2019-06-19 17:43:44,577+0530 INFO  RuntimeStats$ProgressTicker   Finished successfully:1
+2019-06-19 17:43:44,583+0530 DEBUG swift Starting cleanups
+2019-06-19 17:43:44,583+0530 INFO  swift START cleanups=[[hello-run001, local]]
+2019-06-19 17:43:44,584+0530 INFO  swift START dir=hello-run001 host=local
+2019-06-19 17:43:44,584+0530 DEBUG swift cdmfile 
+2019-06-19 17:43:44,584+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-06-19 17:43:44,585+0530 INFO  swift END dir=hello-run001 host=local
+2019-06-19 17:43:44,585+0530 INFO  swift END cleanups=[[hello-run001, local]]
+2019-06-19 17:43:44,585+0530 DEBUG swift Ending cleanups
+2019-06-19 17:43:44,587+0530 INFO  Loader Swift finished with no errors

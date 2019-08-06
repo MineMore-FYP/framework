@@ -1,0 +1,39 @@
+Progress  2019-08-05 17:04:00.792460889+0530  LOG_START
+
+_____________________________________________________________________________
+
+        Wrapper (_swiftwrap)
+_____________________________________________________________________________
+
+Job directory mode is: link on shared filesystem
+PID=2948
+HOST=
+PWD=/home/amanda/SWIFT/swift1/part02/swiftwork/p2-run001
+DIR=jobs/s/simulate-tpk07cbo
+EXEC=/home/amanda/SWIFT/swift1/app/simulate
+STDIN=
+STDOUT=output/sim_1.out
+STDERR=stderr.txt
+DIRS=output
+INF=
+OUTF=output/sim_1.out
+COLLECT=
+CDM_FILE=
+ARGS=
+ARGC=0
+MPI_RANK=
+PMI_RANK=
+Progress  2019-08-05 17:04:00.800428281+0530  CREATE_JOBDIR
+Created job directory: jobs/s/simulate-tpk07cbo
+Progress  2019-08-05 17:04:00.803121468+0530  CREATE_INPUTDIR
+Created output directory: jobs/s/simulate-tpk07cbo/output
+Progress  2019-08-05 17:04:00.805492362+0530  LINK_INPUTS
+Progress  2019-08-05 17:04:00.806791615+0530  EXECUTE
+APP_RESOURCES=real_secs:0.01,kernel_secs:0.00,user_secs:0.01,percent_cpu:94%,max_rss:8748,avg_rss:0,avg_tot_vm:0,avg_priv_data:0,avg_priv_stack:0,avg_shared_text:0,page_size:4096,major_pgfaults:0,minor_pgfaults:1015,swaps:0,invol_context_switches:3,vol_waits:1,fs_reads:0,fs_writes:8,sock_recv:0,sock_send:0,signals:0,exit_status:0
+Moving back to workflow directory /home/amanda/SWIFT/swift1/part02/swiftwork/p2-run001
+Progress  2019-08-05 17:04:00.829011057+0530  EXECUTE_DONE
+Job ran successfully
+Progress  2019-08-05 17:04:00.830055678+0530  MOVING_OUTPUTS output/sim_1.out
+Progress  2019-08-05 17:04:00.831960860+0530  RM_JOBDIR
+Progress  2019-08-05 17:04:00.833351109+0530  TOUCH_SUCCESS
+Progress  2019-08-05 17:04:00.834608000+0530  END

@@ -2,28 +2,7 @@ import os
 import glob
 import pandas as pd
 
-path = '/Users/rajiniwijayawardana/Desktop/dataFileSelection'
-os.chdir(path)
-
-allFiles = os.listdir()
-
-print(os.name)
-
-##allFiles = glob.glob(path + "/*.CSV")
-
-print(allFiles)
-
-if os.name == 'nt':
-    import win32api, win32con
-def file_is_hidden(p):
-    if os.name== 'nt':
-        attribute = win32api.GetFileAttributes(p)
-        return attribute & (win32con.FILE_ATTRIBUTE_HIDDEN | win32con.FILE_ATTRIBUTE_SYSTEM)
-    else:
-        return p.startswith('.') #linux-osx
-
-fileList = [filename for filename in os.listdir('.') if not file_is_hidden(filename)]
-print(fileList)
+##File selection
 
 selectedFiles = []
 
@@ -64,18 +43,11 @@ userMonth = "JULY"
 
 for filename in fileList:
     desiredMonth = getMonthlyFiles(userMonth)
-    print(filename)
+    print(filename + "- " + desiredMonth)
     filenameMonth=filename[4:6]
+    print(filenameMonth)
+    print(filenameMonth == desiredMonth)
     if filenameMonth == desiredMonth:          
         selectedFiles.append(filename)
 
 print(selectedFiles)
-
-for filename in selectedFiles:
-##    print(filename.replace(path + "\\", ''))
-    #combine all files in the list
-    combined_csv = pd.concat([pd.read_csv(filename, delimiter = "\t") for filename in allFiles])
-
-
-##export to csv
-combined_csv.to_csv( "combined_csv.csv", index=False, encoding='utf-8-sig')

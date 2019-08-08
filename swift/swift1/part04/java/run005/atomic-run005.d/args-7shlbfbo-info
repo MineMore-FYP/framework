@@ -1,0 +1,309 @@
+Progress  2019-08-07 14:45:04.314138729+0530  LOG_START
+
+_____________________________________________________________________________
+
+        Wrapper (_swiftwrap)
+_____________________________________________________________________________
+
+Job directory mode is: link on shared filesystem
+Cannot find executable args on site system path
+
+_____________________________________________________________________________
+
+        command line
+_____________________________________________________________________________
+
+args-7shlbfbo -jobdir a -scratch -e args -out sim.out -err stderr.txt -i -d -if -of sim.out -cf -cdmfile -status files -a
+
+_____________________________________________________________________________
+
+        uname -a
+_____________________________________________________________________________
+
+Linux amanda-pc 4.15.0-55-generic #60~16.04.2-Ubuntu SMP Thu Jul 4 09:03:09 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+_____________________________________________________________________________
+
+        id
+_____________________________________________________________________________
+
+uid=1000(amanda) gid=1000(amanda) groups=1000(amanda),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare)
+
+_____________________________________________________________________________
+
+        env
+_____________________________________________________________________________
+
+XDG_VTNR=7
+LC_PAPER=si_LK
+LC_ADDRESS=si_LK
+XDG_SESSION_ID=c2
+EXEC=
+VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/amanda
+LC_MONETARY=si_LK
+CLUTTER_IM_MODULE=xim
+SESSION=ubuntu
+BEAGLE_USERNAME=
+GPG_AGENT_INFO=/home/amanda/.gnupg/S.gpg-agent:0:1
+TERM=xterm-256color
+VTE_VERSION=4205
+XDG_MENU_PREFIX=gnome-
+SHELL=/bin/bash
+QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
+WINDOWID=79691786
+LC_NUMERIC=si_LK
+OLDPWD=/home/amanda/Desktop/framework/swift/swift1/part04/java/swiftwork/atomic-run005
+UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1434
+GNOME_KEYRING_CONTROL=
+AD_HOC_N_USERNAME=
+GTK_MODULES=gail:atk-bridge:unity-gtk-module
+USER=amanda
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+QT_ACCESSIBILITY=1
+LC_TELEPHONE=si_LK
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+ORIGEXEC=args
+SESSION_MANAGER=local/amanda-pc:@/tmp/.ICE-unix/1833,unix/amanda-pc:/tmp/.ICE-unix/1833
+DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
+AWS_CREDENTIALS_FILE=
+WORKON_HOME=/home/amanda/.virtualenvs
+XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg
+DESKTOP_SESSION=ubuntu
+PATH=/home/amanda/Desktop/framework/swift/swift1/bin:/home/amanda/Desktop/framework/swift/swift1/app:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/amanda/bin:/home/amanda/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/amanda/swift-0.96.2/bin:/usr/local/go/bin:/sbin:/bin:/usr/bin
+OSG_PROJECT=
+VIRTUALENVWRAPPER_HOOK_DIR=/home/amanda/.virtualenvs
+QT_IM_MODULE=ibus
+QT_QPA_PLATFORMTHEME=appmenu-qt5
+CLOUD_HEADNODE=http://HEADNODE_ADDRESS:50010
+OSG_USERNAME=
+LC_IDENTIFICATION=si_LK
+XDG_SESSION_TYPE=x11
+PWD=/home/amanda/Desktop/framework/swift/swift1/part04/java/swiftwork/atomic-run005
+JOB=dbus
+XMODIFIERS=@im=ibus
+AD_HOC_1_USERNAME=
+GNOME_KEYRING_PID=
+LANG=en_US.UTF-8
+GDM_LANG=en_US
+MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
+BLUES_USERNAME=
+LC_MEASUREMENT=si_LK
+COMPIZ_CONFIG_PROFILE=ubuntu
+IM_CONFIG_PHASE=1
+SWIFT_HOME=/home/amanda/swift-0.96.2
+URL_OF_AD_HOC_MACHINE_1=
+MIDWAY_USERNAME=
+GDMSESSION=ubuntu
+BEAGLE_PROJECT=
+SESSIONTYPE=gnome-session
+GTK2_MODULES=overlay-scrollbar
+SHLVL=3
+HOME=/home/amanda
+XDG_SEAT=seat0
+LANGUAGE=en_US
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+XDG_SESSION_DESKTOP=ubuntu
+LOGNAME=amanda
+CLASSPATH=:.:/home/amanda/Downloads/reo-linux_mac/bin/reo-runtime-java.jar:/home/amanda/Downloads/reo-linux_mac/bin/reo-runtime-java-lykos.jar
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-HCcUKGy8aU
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
+QT4_IM_MODULE=xim
+LESSOPEN=| /usr/bin/lesspipe %s
+VIRTUALENVWRAPPER_WORKON_CD=1
+INSTANCE=
+XDG_RUNTIME_DIR=/run/user/1000
+DISPLAY=:0
+XDG_CURRENT_DESKTOP=Unity
+GTK_IM_MODULE=ibus
+LESSCLOSE=/usr/bin/lesspipe %s %s
+LC_TIME=si_LK
+LC_NAME=si_LK
+XAUTHORITY=/home/amanda/.Xauthority
+_=/usr/bin/env
+
+_____________________________________________________________________________
+
+        df
+_____________________________________________________________________________
+
+Filesystem     1K-blocks     Used Available Use% Mounted on
+udev             4001652        0   4001652   0% /dev
+tmpfs             806364     9688    796676   2% /run
+/dev/sda6       39991468 16747200  21189716  45% /
+tmpfs            4031820   114428   3917392   3% /dev/shm
+tmpfs               5120        4      5116   1% /run/lock
+tmpfs            4031820        0   4031820   0% /sys/fs/cgroup
+/dev/sda1         507904    56716    451188  12% /boot/efi
+tmpfs             806364       96    806268   1% /run/user/1000
+
+_____________________________________________________________________________
+
+        /proc/cpuinfo
+_____________________________________________________________________________
+
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 2442.884
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
+bogomips	: 5424.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 2233.379
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
+bogomips	: 5424.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 2031.424
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
+bogomips	: 5424.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 1898.122
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
+bogomips	: 5424.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+_____________________________________________________________________________
+
+        /proc/meminfo
+_____________________________________________________________________________
+
+MemTotal:        8063640 kB
+MemFree:         2480284 kB
+MemAvailable:    5060372 kB
+Buffers:          240692 kB
+Cached:          2890900 kB
+SwapCached:            0 kB
+Active:          3079836 kB
+Inactive:        2121080 kB
+Active(anon):    2071824 kB
+Inactive(anon):   427068 kB
+Active(file):    1008012 kB
+Inactive(file):  1694012 kB
+Unevictable:          48 kB
+Mlocked:              48 kB
+SwapTotal:       8283132 kB
+SwapFree:        8283132 kB
+Dirty:               444 kB
+Writeback:             0 kB
+AnonPages:       2069224 kB
+Mapped:           642808 kB
+Shmem:            429572 kB
+Slab:             238896 kB
+SReclaimable:     187988 kB
+SUnreclaim:        50908 kB
+KernelStack:       14080 kB
+PageTables:        48984 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    12314952 kB
+Committed_AS:    7675548 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      206884 kB
+DirectMap2M:     7028736 kB
+DirectMap1G:     1048576 kB

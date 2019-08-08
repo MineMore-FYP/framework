@@ -1,0 +1,34 @@
+Swift 0.96.2 git-rev: b9611649002eecd640fc6c58bbb88cb35ce03539 heads/release-0.96-swift 6287
+RunID: run005
+Progress: Wed, 07 Aug 2019 14:45:04+0530
+Exception in args:
+    Arguments: []
+    Host: local
+    Directory: atomic-run005/jobs/a/args-7shlbfbo
+	exception @ swift-int.k, line: 467
+Caused by: Cannot find executable args on site system path
+	throw @ swift-int.k, line: 78
+
+	k:assign @ swift.k, line: 174
+Caused by: Exception in args:
+    Arguments: []
+    Host: local
+    Directory: atomic-run005/jobs/a/args-7shlbfbo
+	exception @ swift-int.k, line: 467
+Caused by: Cannot find executable args on site system path
+	throw @ swift-int.k, line: 78
+
+Final status: Wed, 07 Aug 2019 14:45:04+0530  Failed:1
+The following errors have occurred:
+1. Exception in args:
+    Arguments: []
+    Host: local
+    Directory: atomic-run005/jobs/a/args-7shlbfbo
+	exception @ swift-int.k, line: 467
+Caused by: Cannot find executable args on site system path
+	throw @ swift-int.k, line: 78
+
+Execution failed:
+Execution completed with errors
+	throw @ swift.k, line: 116
+

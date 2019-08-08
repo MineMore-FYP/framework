@@ -1,23 +1,23 @@
 import os
 import glob
 import pandas as pd
+from dataFileSelection import *
+import csv
 
-path = 'D:/FYP/ds'
-os.chdir(path)
-
-allFiles = os.listdir()
-
-print(allFiles)
-
-fileList = [filename for filename in os.listdir('.')]
-print(fileList)
-
-for filename in selectedFiles:
-    print(filename)
-    #combine all files in the list
-    combined_csv = pd.concat([pd.read_csv(filename, delimiter = "\t") for filename in selectedFiles])
-    print(combined_csv)
+#create csv header
+with open("D:/FYP/ds/CSV.header.dailyupdates.txt") as csvfile:
+    reader = csv.reader(csvfile, delimiter = "\t") # change contents to floats
+    header = list(reader)[0]
+    print(header)
 
 
-##export to csv
-#combined_csv.to_csv( "combined_csv.csv", index=False, encoding='utf-8-sig')
+with open("D:/FYP/ds/combined.csv", "w", newline='', encoding="utf8") as outcsv:
+    writer = csv.writer(outcsv, delimiter=',')
+    writer.writerow(header) # write the header
+
+
+    # write the actual content line by line
+    for filename in selectedFiles:
+        with open(filename, 'r', newline='', encoding="utf8") as incsv:
+            reader = csv.reader(incsv, delimiter='\t')
+            writer.writerows(row + [0.0] for row in reader)

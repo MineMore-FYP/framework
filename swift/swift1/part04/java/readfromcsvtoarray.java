@@ -11,7 +11,7 @@ public class readfromcsvtoarray {
         try {
 
 		csvReader = new BufferedReader(new FileReader("stu.csv"));
-		String row;
+		String row = null;
 		String[] data = null;
 		int i = 0;
 		while ((row = csvReader.readLine()) != null) {

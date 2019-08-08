@@ -1,0 +1,115 @@
+2019-08-07 14:45:03,315+0530 INFO  Loader JAVA Private Build OpenJDK 64-Bit Server VM 1.8.0_222
+2019-08-07 14:45:03,316+0530 INFO  Loader VERSION Swift 0.96.2 git-rev: b9611649002eecd640fc6c58bbb88cb35ce03539 heads/release-0.96-swift 6287
+2019-08-07 14:45:03,316+0530 INFO  Loader RUN_ID run005
+2019-08-07 14:45:03,316+0530 INFO  Loader ARGUMENTS [-runid, run005, -logfile, /home/amanda/Desktop/framework/swift/swift1/part04/java/run005/swift.log, atomic.swift]
+2019-08-07 14:45:03,316+0530 INFO  Loader MAX_HEAP 954728448
+2019-08-07 14:45:03,316+0530 INFO  Loader GLOBUS_HOSTNAME amanda-pc
+2019-08-07 14:45:03,316+0530 INFO  Loader CWD /home/amanda/Desktop/framework/swift/swift1/part04/java/.
+2019-08-07 14:45:03,317+0530 DEBUG Loader SWIFT_CONFIGURATION 
+[D] /home/amanda/swift-0.96.2/etc/swift.conf
+[C] <Command Line>
+{
+	TCPPortRange: "50000, 50100"                               # [D] line 27
+	alwaysTransferWrapperLog: true                             # [D] line 61
+	executionRetries: 0                                        # [D] line 137
+	fileOperationsThrottle: 8                                  # [D] line 121
+	fileTransfersThrottle: 4                                   # [D] line 107
+	hostJobSubmitThrottle: 2                                   # [D] line 95
+	jobSubmitThrottle: 4                                       # [D] line 83
+	keepSiteDir: false                                         # [D] line 131
+	lazyErrors: true                                           # [D] line 41
+	logProvenance: false                                       # [D] line 200
+	maxForeachThreads: 16384                                   # [D] line 194
+	replicationEnabled: false                                  # [D] line 146
+	replicationLimit: 3                                        # [D] line 157
+	replicationMinQueueTime: 60                                # [D] line 153
+	site.local {
+		app.ALL.executable: "*"                                   # [D] line 232
+		execution.type: "local"                                   # [D] line 223
+		filesystem.type: "local"                                  # [D] line 226
+		workDirectory: "swiftwork"                                # [D] line 229
+	}
+	sites: [local]                                             # [D] line 236
+	tracingEnabled: false                                      # [D] line 51
+}
+
+2019-08-07 14:45:03,317+0530 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type file;
+
+app (file bf) myproc (string s="foo") {
+    args stdout = filename(bf);
+}
+
+file f <"sim.out">;
+f = myproc();
+
+
+2019-08-07 14:45:03,317+0530 DEBUG textfiles END SWIFTSCRIPT:
+2019-08-07 14:45:03,317+0530 INFO  Loader atomic.swift: source file is new. Recompiling.
+2019-08-07 14:45:04,144+0530 INFO  Loader RUN_START
+2019-08-07 14:45:04,147+0530 INFO  SwiftExecutor swift.home = /home/amanda/swift-0.96.2
+2019-08-07 14:45:04,172+0530 INFO  AbstractScheduler Setting resources to: {local=local}
+2019-08-07 14:45:04,180+0530 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2019-08-07 14:45:04,189+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,191+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,192+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,220+0530 INFO  RuntimeStats$ProgressTicker HeapMax: 954728448, CrtHeap: 124780544, UsedHeap: 25010528, JVMThreads: 16
+2019-08-07 14:45:04,221+0530 INFO  RuntimeStats$ProgressTicker 
+2019-08-07 14:45:04,222+0530 DEBUG swift PROCEDURE line=3 thread=R name=myproc
+2019-08-07 14:45:04,224+0530 DEBUG swift JOB_INIT jobid=args-7shlbfbo tr=args
+2019-08-07 14:45:04,225+0530 DEBUG swift JOB_SITE_SELECT jobid=args-7shlbfbo
+2019-08-07 14:45:04,228+0530 INFO  swift START host=local - Initializing shared directory
+2019-08-07 14:45:04,229+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,241+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,242+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,243+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,243+0530 INFO  swift END host=local - Done initializing shared directory
+2019-08-07 14:45:04,244+0530 DEBUG swift THREAD_ASSOCIATION jobid=args-7shlbfbo thread=R host=local replicationGroup=null
+2019-08-07 14:45:04,245+0530 INFO  swift START jobid=args-7shlbfbo host=local - Initializing directory structure
+2019-08-07 14:45:04,245+0530 INFO  swift START path= dir=atomic-run005/shared - Creating directory structure
+2019-08-07 14:45:04,246+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,246+0530 INFO  swift END jobid=args-7shlbfbo - Done initializing directory structure
+2019-08-07 14:45:04,246+0530 INFO  swift START jobid=args-7shlbfbo - Staging in files []
+2019-08-07 14:45:04,246+0530 INFO  swift END jobid=args-7shlbfbo - Staging in finished
+2019-08-07 14:45:04,246+0530 DEBUG swift JOB_START jobid=args-7shlbfbo tr=args arguments=[] tmpdir=atomic-run005/jobs/a/args-7shlbfbo host=local
+2019-08-07 14:45:04,251+0530 INFO  Execute JOB_TASK jobid=args-7shlbfbo taskid=urn:R-1565169303330 exec=/bin/bash dir=atomic-run005 args=shared/_swiftwrap args-7shlbfbo -jobdir a -scratch  -e args -out sim.out -err stderr.txt -i -d  -if  -of sim.out -cf  -cdmfile -status files -a
+2019-08-07 14:45:04,256+0530 INFO  Execute TASK_STATUS_CHANGE taskid=urn:R-1565169303330 status=8
+2019-08-07 14:45:04,256+0530 INFO  Execute TASK_STATUS_CHANGE taskid=urn:R-1565169303330 status=1
+2019-08-07 14:45:04,308+0530 INFO  Execute TASK_STATUS_CHANGE taskid=urn:R-1565169303330 status=2
+2019-08-07 14:45:04,350+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,350+0530 INFO  Execute TASK_STATUS_CHANGE taskid=urn:R-1565169303330 status=7
+2019-08-07 14:45:04,351+0530 DEBUG swift START jobid=args-7shlbfbo
+2019-08-07 14:45:04,355+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,355+0530 INFO  swift FAILURE jobid=args-7shlbfbo - Failure file found
+2019-08-07 14:45:04,357+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,361+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,362+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,365+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,366+0530 INFO  swift NO_STATUS_FILE jobid=args-7shlbfbo - Error file missing
+2019-08-07 14:45:04,366+0530 DEBUG swift APPLICATION_EXCEPTION jobid=args-7shlbfbo - Application exception: Cannot find executable args on site system path
+	throw @ swift-int.k, line: 78
+
+2019-08-07 14:45:04,389+0530 INFO  LateBindingScheduler jobs queued: 0
+2019-08-07 14:45:04,390+0530 INFO  swift END_FAILURE thread=R tr=args
+2019-08-07 14:45:04,390+0530 INFO  swift Exception in args:
+    Arguments: []
+    Host: local
+    Directory: atomic-run005/jobs/a/args-7shlbfbo
+	exception @ swift-int.k, line: 467
+Caused by: Cannot find executable args on site system path
+	throw @ swift-int.k, line: 78
+
+	k:assign @ swift.k, line: 174
+Caused by: Exception in args:
+    Arguments: []
+    Host: local
+    Directory: atomic-run005/jobs/a/args-7shlbfbo
+	exception @ swift-int.k, line: 467
+Caused by: Cannot find executable args on site system path
+	throw @ swift-int.k, line: 78
+
+2019-08-07 14:45:04,392+0530 DEBUG swift PROCEDURE_END line=3 thread=R name=myproc
+2019-08-07 14:45:04,395+0530 INFO  RuntimeStats$ProgressTicker HeapMax: 954728448, CrtHeap: 124780544, UsedHeap: 32197760, JVMThreads: 23
+2019-08-07 14:45:04,397+0530 INFO  RuntimeStats$ProgressTicker   Failed:1
+2019-08-07 14:45:04,418+0530 INFO  swift Errors detected. Cleanup not done.
+2019-08-07 14:45:04,422+0530 INFO  Loader Swift finished with errors

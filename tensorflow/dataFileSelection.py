@@ -6,6 +6,11 @@
 import os
 import glob
 
+path = 'D:/FYP/ds'
+os.chdir(path)
+
+allFiles = os.listdir()
+
 ##File selection
 
 selectedFiles = []
@@ -48,13 +53,14 @@ def getMonthlyFiles(m):
 userMonth = "JULY"
 
 #for all files in directory select files with matching int of user defined month
-def selectDataFiles(fileList):
-    for filename in fileList:
-    	desiredMonth = getMonthlyFiles(userMonth)
-	print(filename + "- " + desiredMonth)
-	filenameMonth=filename[4:6]
-	print(filenameMonth)
-	print(filenameMonth == desiredMonth)
-	if filenameMonth == desiredMonth:          
-	  selectedFiles.append(filename)
-    print(selectedFiles)
+for filename in allFiles:
+    #print(filename)
+    desiredMonth = getMonthlyFiles(userMonth)
+    #print(desiredMonth)
+    filenameMonth=filename[4:6]
+    #print(filenameMonth)
+    #print(filenameMonth == desiredMonth)
+    if filenameMonth == desiredMonth:
+        selectedFiles.append(filename)
+
+print(selectedFiles)

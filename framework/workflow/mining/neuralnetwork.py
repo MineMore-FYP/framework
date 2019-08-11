@@ -1,4 +1,4 @@
-# MLP for Pima Indians Dataset with 10-fold cross validation via sklearn
+# MLP for Dataset with 10-fold cross validation via sklearn
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasClassifier
@@ -20,7 +20,7 @@ def create_model():
 # fix random seed for reproducibility
 seed = 7
 numpy.random.seed(seed)
-# load pima indians dataset
+# load dataset
 dataset = numpy.loadtxt("D:/FYP/bank-data.csv", delimiter=",")
 # split into input (X) and output (Y) variables
 X = dataset[:,1:8]

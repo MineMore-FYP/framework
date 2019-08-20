@@ -6,10 +6,14 @@
 import os
 import glob
 
-path = 'D:/FYP/ds'
+#Kalpani
+#path = 'D:/FYP/ds'
+
+#Amanda
+path = '/home/amanda/FYP/ds'
 os.chdir(path)
 
-allFiles = os.listdir()
+allFiles = os.listdir(path)
 
 ##File selection
 

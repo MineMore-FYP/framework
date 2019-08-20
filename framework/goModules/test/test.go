@@ -1,15 +1,14 @@
 package main
 
 import (
-	"bufio"
-    	"encoding/csv"
-    	"os"
-    	"fmt"
-    	"io"
+    "bufio"
+    "fmt"
+    "io"
+    "os/exec"
 )
 
 func main() {
-    cmd := exec.Command("python", "helloworld.py")
+    cmd := exec.Command("python", "testargs.py", "hello")
     stdout, err := cmd.StdoutPipe()
     if err != nil {
         panic(err)

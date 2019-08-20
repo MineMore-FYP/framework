@@ -17,4 +17,14 @@ func main() {
 	cmd1.Stdout = os.Stdout
 	cmd1.Stderr = os.Stderr
 	log.Println(cmd1.Run())
+
+	cmd2 := exec.Command("python3", "dropUserDefinedRows.py", "/home/amanda/FYP/testcsv/cleanedDataset.csv", "Actor1Name", "BRAZIL", "UNITED STATES")
+	cmd2.Stdout = os.Stdout
+	cmd2.Stderr = os.Stderr
+	log.Println(cmd2.Run())
+
+	cmd3 := exec.Command("python3", "removeDuplicateRows.py", "/home/amanda/FYP/testcsv/cleanedDataset.csv")
+	cmd3.Stdout = os.Stdout
+	cmd3.Stderr = os.Stderr
+	log.Println(cmd3.Run())
 }

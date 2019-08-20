@@ -5,13 +5,13 @@ from dataFileSelection import *
 import csv
 
 #create csv header
-with open("D:/FYP/ds/CSV.header.dailyupdates.txt") as csvfile:
+with open("/home/amanda/FYP/ds/CSV.header.dailyupdates.txt") as csvfile:
     reader = csv.reader(csvfile, delimiter = "\t") # change contents to floats
     header = list(reader)[0]
     print(header)
 
 
-with open("D:/FYP/ds/combined.csv", "w", newline='', encoding="utf8") as outcsv:
+with open("/home/amanda/FYP/ds/combined.csv", "w", newline='', encoding="utf8") as outcsv:
     writer = csv.writer(outcsv, delimiter=',')
     writer.writerow(header) # write the header
 

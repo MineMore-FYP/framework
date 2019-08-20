@@ -1,16 +1,22 @@
 import pandas as pd
 import numpy as np
+import sys
 
 #read csv with defined missing values 
 missing_values = ["n/a", "na", "--"]
-url = "https://raw.githubusercontent.com/dataoptimal/posts/master/data%20cleaning%20with%20python%20and%20pandas/property%20data.csv"
-df = pd.read_csv(url, na_values = missing_values)
+#url = "https://raw.githubusercontent.com/dataoptimal/posts/master/data%20cleaning%20with%20python%20and%20pandas/property%20data.csv"
+
+df = pd.read_csv(sys.argv[1], na_values = missing_values)
 
 print(df, "\n")
 
 #user input to dropCols list
-dropCols = [ 'NUM_BEDROOMS', 'OWN_OCCUPIED']
+dropCols = [ sys.argv[2], sys.argv[3]]
 dfUserDropped = df.drop(dropCols, axis=1)
 
-print(dfUserDropped, "\n")
+#dfUserDropped.to_csv (r'/home/amanda/FYP/ds/cleanedDataset.csv', index = None, header=True)
+dfUserDropped.to_csv (r'/home/amanda/FYP/testcsv/cleanedDataset.csv', index = None, header=True)
+
+
+#print(dfUserDropped, "\n")
 

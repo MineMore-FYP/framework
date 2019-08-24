@@ -1,22 +1,23 @@
 import pandas as pd
 import numpy as np
+import sys
 
 #function to count thr number of missing values in a given column
 def countMissingValues(colName, df):
   dfCol = df[colName]
-  return dfCol.isna().sum()  
+  return dfCol.isnull().sum()  
 
 #user defined missing values
 missing_values = ["n/a", "na", "--"]
 
 #read csv with defined missing values 
-url = "https://raw.githubusercontent.com/dataoptimal/posts/master/data%20cleaning%20with%20python%20and%20pandas/property%20data.csv"
-df = pd.read_csv(url, na_values = missing_values)
+#url = "https://raw.githubusercontent.com/dataoptimal/posts/master/data%20cleaning%20with%20python%20and%20pandas/property%20data.csv"
+df = pd.read_csv(sys.argv[1], na_values = missing_values)
 
 print(df, "\n")
 
 #user defined percentage of maximum of allowed missing values
-maxPercentageOfMissingValues=20
+maxPercentageOfMissingValues=int(sys.argv[2])
 
 colNames = list(df)
 noOfRows = df.shape[0]
@@ -34,3 +35,6 @@ for i in colNames:
     print("dropped column ", i)
     
 print("dropped due to criteria not met : \n", dfMissingValueCriteriaDropped, "\n")
+
+#dfUserDropped.to_csv (r'/home/amanda/FYP/ds/cleanedDataset.csv', index = None, header=True)
+dfMissingValueCriteriaDropped.to_csv (r'/home/amanda/FYP/testcsv/cleanedDataset.csv', index = None, header=True)

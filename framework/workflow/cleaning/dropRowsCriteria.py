@@ -8,6 +8,7 @@ missing_values = ["n/a", "na", "--"]
 df = pd.read_csv(sys.argv[1], na_values = missing_values)
  
 numOfColumns = len(df.columns)
+#user defined percentage
 maxPercentageOfMissingValues=int(sys.argv[2])
 threshold = (numOfColumns * maxPercentageOfMissingValues)/100
 

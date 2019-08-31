@@ -6,8 +6,15 @@ import (
     	"os/exec"
 )
 
-func pythonCall(progName string, dataset string){
-	cmd := exec.Command("python3", progName, dataset)
+func pythonCall(progName string, dataset string, parameters ...string){
+	//var paramString string
+	var b bytes.Buffer
+
+	for i := 0; i < len(parameters); i++ {
+		b.WriteString(parameters[i])
+	}
+
+	cmd := exec.Command("python3", progName, b.String())
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	log.Println(cmd.Run())

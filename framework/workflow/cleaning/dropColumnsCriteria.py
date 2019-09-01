@@ -21,20 +21,19 @@ maxPercentageOfMissingValues=int(sys.argv[2])
 
 colNames = list(df)
 noOfRows = df.shape[0]
-print("Total Number of Rows : ",noOfRows, "\n")
-print("Column Name : ", colNames, "\n")
+#print("Total Number of Rows : ",noOfRows, "\n")
+#print("Column Name : ", colNames, "\n")
 
 dfMissingValueCriteriaDropped=df
 for i in colNames:
   noMissingValues = countMissingValues(i,df)
-  print("Total number of missing values in column ", i, "=", noMissingValues)
-  #print(noMissingValues/noOfRows)
-  #print(maxPercentageOfMissingValues/100)
+  #print("Total number of missing values in column ", i, "=", noMissingValues)
+
   if ((noMissingValues/noOfRows)>(maxPercentageOfMissingValues/100)):
     dfMissingValueCriteriaDropped = dfMissingValueCriteriaDropped.drop(i, axis=1)
-    print("dropped column ", i)
+    #print("dropped column ", i)
 
-print("dropped due to criteria not met : \n", dfMissingValueCriteriaDropped, "\n")
+#print("dropped due to criteria not met : \n", dfMissingValueCriteriaDropped, "\n")
 
-#dfUserDropped.to_csv (r'/home/amanda/FYP/ds/cleanedDataset.csv', index = None, header=True)
+
 dfMissingValueCriteriaDropped.to_csv (r'/home/amanda/FYP/testcsv/cleanedDataset.csv', index = None, header=True)

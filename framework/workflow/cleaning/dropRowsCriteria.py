@@ -14,5 +14,4 @@ threshold = (numOfColumns * maxPercentageOfMissingValues)/100
 
 
 df = df.dropna(thresh=threshold)
-print(df)
-dfMissingValueCriteriaDropped.to_csv (r'/home/amanda/FYP/testcsv/cleanedDataset.csv', index = None, header=True)
+df.to_csv (r'/home/amanda/FYP/testcsv/cleanedDataset.csv', index = None, header=True)

@@ -2,7 +2,7 @@
 import pandas as pd
 import sys
 
-#url = "https://raw.githubusercontent.com/dataoptimal/posts/master/data%20cleaning%20with%20python%20and%20pandas/property%20data.csv"
+
 
 # making data frame from csv file
 #drop values from index label
@@ -12,7 +12,7 @@ columnName = sys.argv[2]
 deleteValues = []
 
 for n in sys.argv[3:]:
-	print (n)
+	#print (n)
 	deleteValues.append(n)
 
 for i in deleteValues:

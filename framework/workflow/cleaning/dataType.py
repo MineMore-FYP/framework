@@ -22,16 +22,15 @@ def dataType(colName, dataFrame):
                 pass
             pass
     
-    print("Integer count in ",colName, intcount)
-    print("Float count in ", colName, floatcount)
-    print("String count in ", colName , stringcount)
+    #print("Integer count in ",colName, intcount)
+    #print("Float count in ", colName, floatcount)
+    #print("String count in ", colName , stringcount)
     
     if intcount>floatcount and intcount>stringcount:
-        data_type = "int"
+    	return "int"
     elif floatcount>intcount and floatcount>stringcount:
-        data_type = "float"
+        return "float"
     elif stringcount>intcount and stringcount>floatcount:
-        data_type = "str"    
-    return data_type 
-
+        return "str"    
+    
 

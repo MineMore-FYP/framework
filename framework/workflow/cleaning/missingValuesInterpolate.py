@@ -3,15 +3,10 @@ import numpy as np
 from dataType import *
 
 
-df = pd.read_csv("/home/amanda/FYP/testcsv/cleanedDataset.csv")
+df = pd.read_csv(outputDataset)
 colNames = list(df)
 
 #Interpolate integer columns
-#********************************** Check what the weird codes in int columns are in the GDELT dataset ************************************
-#********************************** CAN MAKE THIS USER DEFINED? ***************************************************************************
-
-
-
 for col in colNames:
     if dataType(col, df) == "int":
         # to interpolate the missing values

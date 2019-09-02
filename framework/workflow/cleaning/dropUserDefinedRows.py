@@ -1,21 +1,26 @@
 # importing pandas module
 import pandas as pd
 import sys
-
+from userScript import *
 
 
 # making data frame from csv file
 #drop values from index label
 
-df = pd.read_csv(sys.argv[1] )
-columnName = sys.argv[2]
-deleteValues = []
+df = pd.read_csv(outputDataset)
 
-for n in sys.argv[3:]:
-	#print (n)
-	deleteValues.append(n)
+for key, value in dropFromRow.items():
+	deleteValues = []
+	n = 0
 
-for i in deleteValues:
-  dfUserDroppedRows = df[df[columnName] != i]
+	while n < len(dropFromRow[key]):
+		deleteValues.append(dropFromRow[key][n])
+		n = n+1
+	for i in deleteValues:
+		print(i)
+		print(key)
+		dfAfterUserDroppedRows = df[df[key] != i]
+		df = dfAfterUserDroppedRows
+		
 
-dfUserDroppedRows.to_csv (r'/home/amanda/FYP/testcsv/cleanedDataset.csv', index = None, header=True)
+dfAfterUserDroppedRows.to_csv (outputDataset, index = False, header=True)

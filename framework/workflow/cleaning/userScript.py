@@ -11,6 +11,10 @@ outputDataset = "/home/amanda/FYP/testcsv/cleanedDataset.csv"
 #Drop unique columns
 #Drop one value columns
 
+
+#user defined missing values
+missingValues = ["n/a", "na", "--"]
+
 #Drop user defined cols
 #user defined column array
 dropColumns = ["Actor2Geo_FullName", "ActionGeo_FullName"]
@@ -30,12 +34,17 @@ userDefinedRowPercentage = 20
 
 #remove duplicate rows
 
-#missing value interpolation
-interpolateColumns = ["whatever"] #if interpolateColumns = "all", all int columns
 
-#or option of interpolating all int cols
+#missing value interpolation
+interpolateColumns = "all" #if interpolateColumns = "all", all int columns, else give a list
 
 #mode for user defined columns
+modeColumns = ["ActionGeo_CountryCode", "EventCode"]
+
+#fill missing value with a constant
+missingValueCons = OrderedDict()
+missingValueCons["PID"] = 100045
+missingValueCons["SQ_FT"] = 1000
 
 #binning/encoding/categorising
 

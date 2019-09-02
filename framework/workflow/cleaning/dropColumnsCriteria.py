@@ -8,11 +8,9 @@ def countMissingValues(colName, df):
   dfCol = df[colName]
   return dfCol.isnull().sum()
 
-#user defined missing values
-missing_values = ["n/a", "na", "--"]
 
 #read csv with defined missing values
-df = pd.read_csv(outputDataset, na_values = missing_values)
+df = pd.read_csv(outputDataset)
 
 #user defined percentage of maximum of allowed missing values
 maxPercentageOfMissingValues= userDefinedColPercentage
@@ -29,4 +27,4 @@ for i in colNames:
   if ((noMissingValues/noOfRows)>(maxPercentageOfMissingValues/100)):
     dfMissingValueCriteriaDropped = dfMissingValueCriteriaDropped.drop(i, axis=1)
 
-dfMissingValueCriteriaDropped.to_csv (outputDataset, index = None, header=True)
+dfMissingValueCriteriaDropped.to_csv (outputDataset, index = False, header=True)

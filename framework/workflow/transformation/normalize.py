@@ -3,8 +3,7 @@ from sklearn.preprocessing import Normalizer
 import pandas
 import numpy
 
-url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
-dataframe = pandas.read_csv(url)
+dataframe = pandas.read_csv(outputDataset)
 
 array = dataframe.values
 
@@ -14,8 +13,7 @@ print(noOfColumns)
 print(noOfRows)
 
 # separate array into input and output components
-X = array[:,0:noOfColumns-1]
-Y = array[:,noOfColumns-1]
+X = array[:,0:noOfColumns]
 
 scaler = Normalizer().fit(X)
 normalizedX = scaler.transform(X)

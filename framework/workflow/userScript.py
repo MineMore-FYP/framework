@@ -19,9 +19,9 @@ selectFromRow = OrderedDict()
 selectFromRow['Actor1Name'] = ["BRAZIL", "UNITED STATES"]
 
 
+#CLEANING
 #Drop unique columns
 #Drop one value columns
-
 
 #user defined missing values
 missingValues = ["n/a", "na", "--"]
@@ -37,14 +37,11 @@ userDefinedColPercentage = 20
 dropFromRow = OrderedDict()
 dropFromRow['Actor1Name'] = ["BRAZIL", "UNITED STATES"]
 dropFromRow['Actor2Name'] = ["PAKISTAN"]
-#print (dropFromRow['Actor1Name'][0])
-
 
 #drop rows according to user defined empty value percentage
 userDefinedRowPercentage = 20
 
 #remove duplicate rows
-
 
 #missing value interpolation
 interpolateColumns = "all" #if interpolateColumns = "all", all int columns, else give a list
@@ -57,9 +54,10 @@ missingValueCons = OrderedDict()
 missingValueCons["PID"] = 100045
 missingValueCons["SQ_FT"] = 1000
 
+#transformation
 #binning/encoding/categorising
 
-#transformation
+
 
 #mining
 #which algorithms to use. and relevant params

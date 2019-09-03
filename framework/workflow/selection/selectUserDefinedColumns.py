@@ -1,11 +1,7 @@
 import pandas as pd
 import os.path
 import sys
-
-os.chdir('..')
-PATH = os.getcwd()
-
-sys.path.append(PATH)
+sys.path.append("..")
 
 from userScript import *
 

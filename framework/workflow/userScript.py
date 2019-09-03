@@ -1,10 +1,8 @@
 import os
 from collections import OrderedDict
+import sys
 
 #Workflow
-
-dirpath = os.getcwd()
-print(dirpath)
 
 #input   location
 inputDataset = "/home/amanda/FYP/testcsv/test.csv"

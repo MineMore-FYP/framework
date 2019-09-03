@@ -1,13 +1,7 @@
 # importing pandas module
 import pandas as pd
 import sys
-import os.path
-
-
-os.chdir('..')
-PATH = os.getcwd()
-
-sys.path.append(PATH)
+sys.path.append("..")
 from userScript import *
 
 # making data frame from csv file

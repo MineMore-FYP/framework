@@ -1,6 +1,7 @@
 # importing pandas module
 import pandas as pd
 import sys
+sys.path.append("..")
 from userScript import *
 
 
@@ -21,6 +22,6 @@ for key, value in dropFromRow.items():
 		print(key)
 		dfAfterUserDroppedRows = df[df[key] != i]
 		df = dfAfterUserDroppedRows
-		
+
 
 dfAfterUserDroppedRows.to_csv (outputDataset, index = False, header=True)

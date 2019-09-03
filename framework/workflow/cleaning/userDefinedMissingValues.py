@@ -1,6 +1,6 @@
 import pandas as pd
+sys.path.append("..")
 from userScript import *
-
 
 missing_values = missingValues
 

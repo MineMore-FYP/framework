@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import sys
+sys.path.append("..")
 from userScript import *
 
 #function to count thr number of missing values in a given column

@@ -1,17 +1,25 @@
 import pandas as pd
+import os.path
+import sys
+
+os.chdir('..')
+PATH = os.getcwd()
+
+sys.path.append(PATH)
+
 from userScript import *
 
-#AMANDA:not outputDataset here? since selection is the very first step
-df = pd.read_csv(outputDataset)
+df = pd.read_csv(inputDataset)
 
-#columns=["PID", "SQ_FT"] AMANDA : To be taken from the user script
+if (selectColumns != "all"):
+    dfConcat = pd.DataFrame()
 
-dfConcat = pd.DataFrame()
+    for i in selectColumns:
+        df_i=df[i]
+        dfAfterUserSelectedColumns=pd.concat([dfConcat, df_i], axis=1)
+        dfConcat=dfAfterUserSelectedColumns
 
-for i in columns:
-  df_i=df[i]
-  dfAfterUserSelectedColumns=pd.concat([dfConcat, df_i], axis=1)
-  dfConcat=dfAfterUserSelectedColumns
- 
-#AMANDA: outputDataset
-dfAfterUserSelectedColumns.to_csv (outputDataset, index = False, header=True)
+    dfAfterUserSelectedColumns.to_csv (outputDataset, index = False, header=True)
+
+else:
+    df.to_csv (outputDataset, index = False, header=True)

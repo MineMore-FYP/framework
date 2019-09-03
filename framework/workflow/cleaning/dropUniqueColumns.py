@@ -1,9 +1,18 @@
 import pandas as pd
 import numpy as np
 import sys
+import os.path
+
+
+os.chdir('..')
+PATH = os.getcwd()
+
+sys.path.append(PATH)
+
 from userScript import *
 
-df = pd.read_csv(inputDataset)
+
+df = pd.read_csv(outputDataset)
 numOfRows = df.shape[0]
 
 for col in df.columns:

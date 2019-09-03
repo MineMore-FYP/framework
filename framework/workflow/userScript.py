@@ -1,12 +1,24 @@
-
+import os
 from collections import OrderedDict
 #Workflow
 
-#input dataset location
+dirpath = os.getcwd()
+print(dirpath)
+
+#input   location
 inputDataset = "/home/amanda/FYP/testcsv/test.csv"
 
 #specify output locatiion
 outputDataset = "/home/amanda/FYP/testcsv/cleanedDataset.csv"
+
+#SELECTION
+#select columns
+selectColumns = "all" #if "all" select everything. else give a list ["whatever1", "whatever2"]
+
+#select rows
+selectFromRow = OrderedDict()
+selectFromRow['Actor1Name'] = ["BRAZIL", "UNITED STATES"]
+
 
 #Drop unique columns
 #Drop one value columns

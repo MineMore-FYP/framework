@@ -1,1 +1,9 @@
-Data aggregation is any process in which information is gathered and expressed in a summary form, for purposes such as statistical analysis. A common aggregation purpose is to get more information about particular groups based on specific variables such as age, profession, or income.
+beta — with negative skew
+exponential — with positive skew
+normal_p — normal, platykurtic
+normal_l — normal, leptokurtic
+bimodal — bimodal
+
+A distribution could be any of the above. We would later on make this workflow dynamic by first drawing the distribution and then determining the best transformation mechanism to apply (in order to make it a normal distribution, eliminate/reduce effect of outliers etc.)
+
+For the static workflow we would apply transformation in the following sequence;

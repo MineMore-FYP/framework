@@ -2,22 +2,18 @@
 from sklearn.preprocessing import Normalizer
 import pandas
 import numpy
+import scipy
 
-dataframe = pandas.read_csv(outputDataset)
+url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
+dataframe = pandas.read_csv(url)
 
 array = dataframe.values
 
-noOfColumns = df.shape[1]
-noOfRows = df.shape[0]
-print(noOfColumns)
-print(noOfRows)
-
-# separate array into input and output components
-X = array[:,0:noOfColumns]
-
-scaler = Normalizer().fit(X)
-normalizedX = scaler.transform(X)
+scaler = Normalizer().fit(array)
+normalized = scaler.transform(array)
 
 # summarize transformed data
 numpy.set_printoptions(precision=3)
-print(normalizedX[0:5,:])
+print(normalized[0:5,:])
+
+#last two lines for printing first six rows. change as required to output CSV.

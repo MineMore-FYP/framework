@@ -1,14 +1,21 @@
 package main
 
 import (
-    "log"
-    "os"
-    "os/exec"
+	"fmt"
+	"log"
+	"os"
+	"os/exec"
+	"time"
 )
 
+func pythonCall(progName string) {
+	cmd := exec.Command("python3", progName)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	log.Println(cmd.Run())
+	time.Sleep(2 * time.Millisecond)
+}
+
 func main() {
-    cmd := exec.Command("python", "/home/rajini/Documents/framework/framework/goModules/test/script.py")
-    cmd.Stdout = os.Stdout
-    cmd.Stderr = os.Stderr
-    log.Println(cmd.Run())
+	fmt.Printf("hello, world\n")
 }

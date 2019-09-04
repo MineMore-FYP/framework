@@ -9,6 +9,7 @@ df = pandas.read_csv(url)
 
 array = df.values
 
+#AMANDA : feature range could be taken as a user input from User Script: lowerBoundry, upperBoundry 
 scaler = MinMaxScaler(feature_range=(0, 1))
 rescaled = scaler.fit_transform(array)
 

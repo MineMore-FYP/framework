@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
-from dataType import *
 sys.path.append("..")
 from userScript import *
+from dataType import *
 
 df = pd.read_csv(outputDataset)
 

@@ -1,9 +1,10 @@
 import pandas as pd
 import numpy as np
 import statistics
-from dataType import *
+
 sys.path.append("..")
 from userScript import *
+from dataType import *
 
 df = pd.read_csv(outputDataset)
 #********************************** WHAT HAPPENS WHEN MODE IS NAN *************************************************************************

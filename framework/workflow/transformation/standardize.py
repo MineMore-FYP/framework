@@ -3,17 +3,26 @@ from sklearn.preprocessing import StandardScaler
 import pandas
 import numpy
 import scipy
+import sys
+sys.path.append("..")
+from dataType import *
+from userScript import *
 
-url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
-dataframe = pandas.read_csv(url)
 
-array = dataframe.values
+dataframe = pandas.read_csv(inputDataset)
 
-scaler = StandardScaler().fit(array)
-standardized = scaler.transform(array)
+colNames = userDefinedStandardizeColumns
 
-# summarize transformed data
-numpy.set_printoptions(precision=3)
-print(standardized[0:5,:])
+for col in colNames:
+    if dataType(col, df) == "int":
+        standardizeColumn = dataframe.filter([col], axis=1)
+        dataframe = dataframe.drop(col, axis=1)
 
-#last two lines for printing first six rows. change as required to output CSV.
+        array = standardizeColumn.values
+        scaler = StandardScaler().fit(array)
+        standardized = scaler.transform(array)
+        dataframe[col] = standardized
+    else:
+        print("The column, ", col, "is not of type: integer. Cannot standardize")
+
+dataframe.to_csv (outputDataset, index = False, header=True)

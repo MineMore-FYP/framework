@@ -11,20 +11,20 @@ The four methods above are to be applied for user selected columns. So input sho
 
 For the static workflow we would apply transformation in the following sequence;
 (specific to our GDELT input)
-1. Standardize : AvgTone (since there are outliers. "Score between -100 to +100, with common values between -10 to +10") 
-2. Rescale : NumMentions, NumSources, Num Articles. 
+1. Standardize : AvgTone (since there are outliers. "Score between -100 to +100, with common values between -10 to +10")
+2. Rescale : NumMentions, NumSources, NumArticles.
 lowerBoundry = 0, upperBoundry = 100
-3. Binarization : NumMentions, NumSources, Num Articles.
-Lets binarize these articles at a suitable threshold- maybe 10? above which the user could consider an article as significant. 
+3. Binarization : NumMentions, NumSources, NumArticles.
+Lets binarize these articles at a suitable threshold- maybe 10? above which the user could consider an article as significant.
 The user should be able to define seperate thresholds for each column (ordered dict)
 
 There aren't enough numeric columns to do all these operations on the GDELT dataset
 
 
 
-Next lets do binning/categorize/encoding. 
+Next lets do binning/categorize/encoding.
 
-User input parameters are as follows; 
+User input parameters are as follows;
 1. Categorize : Input = number of categories
 2. Binning : Input = number of bins, bin labels
 3. Encoding : no input
@@ -33,15 +33,15 @@ The four methods above are to be applied for user selected columns. So input sho
 
 LOOK INTO : How do we handle things when we have 8 data items and 3 categories/bins? is it divided as 3/3/2 automatically? (@AMANDA do you know this?)
 
-For the static workflow on the GDELT data set; 
-I don't see a column specifically requiring discretization, it seems to have been already done on the dataset. 
-The only discretizaation I can think of is for the EventBaseCode column. 
+For the static workflow on the GDELT data set;
+I don't see a column specifically requiring discretization, it seems to have been already done on the dataset.
+The only discretizaation I can think of is for the EventBaseCode column.
 eg : 025 = appeal to yield
     0251 = appeal for easing og administrative sanctions
     we can categorize 025 and 0251 in the 'appeal category'
-    This is a stretch. I dont think there are suitable columns for this on our dataset. 
+    This is a stretch. I dont think there are suitable columns for this on our dataset.
 
-Additional Note for future development work: 
+Additional Note for future development work:
 
 A distribution could be any of the below. We would later on make this workflow dynamic by first drawing the distribution and then determining the best transformation mechanism to apply (in order to make it a normal distribution, eliminate/reduce effect of outliers etc.)
 
@@ -50,6 +50,3 @@ exponential — with positive skew
 normal_p — normal, platykurtic
 normal_l — normal, leptokurtic
 bimodal — bimodal
-
-
-

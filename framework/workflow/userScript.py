@@ -58,6 +58,19 @@ missingValueCons["SQ_FT"] = 1000
 #Standardize
 userDefinedStandardizeColumns = ["AvgTone"] #standadizeColumns = "all", all int columns, else give a list
 
+#rescale
+userDefinedRescaleColumns = OrderedDict()
+#0 = lowerBoundry, 100 = upperBoundry
+userDefinedRescaleColumns["NumMentions"] = [0, 100]
+userDefinedRescaleColumns["NumSources"] = [0, 100]
+userDefinedRescaleColumns["NumArticles"] = [0, 100]
+
+#binarize
+userDefinedBinarizeColumns = OrderedDict()
+#0 = lowerBoundry, 100 = upperBoundry
+userDefinedBinarizeColumns["NumMentions"] = [10.0]
+userDefinedBinarizeColumns["NumSources"] = [10.0]
+userDefinedBinarizeColumns["NumArticles"] = [10.0]
 
 #mining
 #which algorithms to use. and relevant params

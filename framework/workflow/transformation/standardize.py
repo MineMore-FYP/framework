@@ -14,15 +14,16 @@ dataframe = pandas.read_csv(inputDataset)
 colNames = userDefinedStandardizeColumns
 
 for col in colNames:
-    if dataType(col, df) == "int":
+    if dataType(col, df) != "str":
         standardizeColumn = dataframe.filter([col], axis=1)
         dataframe = dataframe.drop(col, axis=1)
 
         array = standardizeColumn.values
         scaler = StandardScaler().fit(array)
         standardized = scaler.transform(array)
+        
         dataframe[col] = standardized
     else:
-        print("The column, ", col, "is not of type: integer. Cannot standardize")
+        print("The column, ", col, "is of type: string. Cannot standardize")
 
 dataframe.to_csv (outputDataset, index = False, header=True)

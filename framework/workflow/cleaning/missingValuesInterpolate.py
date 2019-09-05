@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-from dataType import *
 sys.path.append("..")
+from dataType import *
 from userScript import *
 
 
@@ -18,6 +18,8 @@ for col in colNames:
     if dataType(col, df) == "int":
         # to interpolate the missing values
         df[col] = df[col].interpolate(method ='linear', limit_direction ='forward')
+    else:
+        print("The column, ", col, "is not of type: integer. Cannot interpolate")
 
 
 df.to_csv (outputDataset, index = None, header=True)

@@ -55,8 +55,8 @@ missingValueCons["PID"] = 100045
 missingValueCons["SQ_FT"] = 1000
 
 #transformation
-#binning/encoding/categorising
-
+#Standardize
+userDefinedStandardizeColumns = ["AvgTone"] #standadizeColumns = "all", all int columns, else give a list
 
 
 #mining

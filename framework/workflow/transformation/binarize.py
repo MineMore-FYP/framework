@@ -3,20 +3,28 @@ from sklearn.preprocessing import Binarizer
 import pandas
 import numpy
 import scipy
+sys.path.append("..")
+from dataType import *
+from userScript import *
 
-url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
-dataframe = pandas.read_csv(url, names=names)
+dataframe = pandas.read_csv(outputDataset, names=names)
 
-array = dataframe.values
 
-#user defined threshold
-userThreshold = 0.0
+for key, value in userDefinedBinarizeColumns.items():
+    if dataType(col, df) != "str":
+        #user defined threshold
+        userThreshold= value[0]
+        col = key
 
-binarizer = Binarizer(threshold=userThreshold).fit(array)
-binary = binarizer.transform(array)
+        binarizeColumn = df.filter([col], axis=1)
+        df = df.drop(col, axis=1)
 
-# summarize transformed data
-numpy.set_printoptions(precision=3)
-print(binary[0:5,:])
+        array = binarizeColumn.values
+        binarizer = Binarizer(threshold=userThreshold).fit(array)
+        binary = binarizer.transform(array)
 
-#last two lines for printing first six rows. change as required to output CSV.
+        df[col] = binary
+    else:
+        print("The column, ", col, "is of type: string. Cannot binarize")
+
+dataframe.to_csv (outputDataset, index = False, header=True)

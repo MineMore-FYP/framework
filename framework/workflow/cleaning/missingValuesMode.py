@@ -12,7 +12,9 @@ colNames = modeColumns
 
 for col in colNames:
 	modeOfCol = statistics.mode(df[col])
-	df[col].fillna(modeOfCol, inplace = True)
-
+	if (modeOfCol!= "NaN"):
+		df[col].fillna(modeOfCol, inplace = True)
+	else:
+		print("Can't fill with mode. The mode of ", col, " is NaN")
 
 df.to_csv (outputDataset, index = False, header=True)

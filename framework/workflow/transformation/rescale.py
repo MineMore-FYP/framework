@@ -3,18 +3,27 @@ import pandas
 import scipy
 import numpy
 from sklearn.preprocessing import MinMaxScaler
+sys.path.append("..")
+from dataType import *
+from userScript import *
 
-url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
-df = pandas.read_csv(url)
+df = pandas.read_csv(outputDataset)
 
-array = df.values
+for key, value in userDefinedRescaleColumns.items():
+    if dataType(col, df) != "str":
+        lowerBound = value[0]
+        upperBound = value[1]
+        col = key
+        scaler = MinMaxScaler(feature_range=(lowerBound, upperBound))
 
-#AMANDA : feature range could be taken as a user input from User Script: lowerBoundry, upperBoundry 
-scaler = MinMaxScaler(feature_range=(0, 1))
-rescaled = scaler.fit_transform(array)
+        rescaleColumn = df.filter([col], axis=1)
+        df = df.drop(col, axis=1)
 
-# summarize transformed data
-numpy.set_printoptions(precision=3)
-print(rescaled[0:5,:])
+        array = rescaleColumn.values
+        rescaled = scaler.fit_transform(array)
 
-#last two lines for printing first six rows. change as required to output CSV.
+        df[col] = rescaled
+    else:
+        print("The column, ", col, "is of type: string. Cannot rescale")
+
+dataframe.to_csv (outputDataset, index = False, header=True)

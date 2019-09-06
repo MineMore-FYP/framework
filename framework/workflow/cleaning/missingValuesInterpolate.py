@@ -15,11 +15,11 @@ else:
     colNames = interpolateColumns
 
 for col in colNames:
-    if dataType(col, df) == "int":
+    if dataType(col, df) != "str":
         # to interpolate the missing values
         df[col] = df[col].interpolate(method ='linear', limit_direction ='forward')
     else:
-        print("The column, ", col, "is not of type: integer. Cannot interpolate")
+        #print("The column, ", col, "is of type: string. Cannot interpolate")
 
 
 df.to_csv (outputDataset, index = None, header=True)

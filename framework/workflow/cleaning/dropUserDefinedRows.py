@@ -1,29 +1,27 @@
-# importing pandas module 
-import pandas as pd 
+# importing pandas module
+import pandas as pd
 import sys
+sys.path.append("..")
+from userScript import *
 
-#url = "https://raw.githubusercontent.com/dataoptimal/posts/master/data%20cleaning%20with%20python%20and%20pandas/property%20data.csv"
-  
-# making data frame from csv file 
+
+# making data frame from csv file
 #drop values from index label
 
-df = pd.read_csv(sys.argv[1] ) 
-columnName = sys.argv[2]
-deleteValues = [sys.argv[3], sys.argv[4]]
+df = pd.read_csv(outputDataset)
 
-for i in deleteValues:
+for key, value in dropFromRow.items():
+	deleteValues = []
+	n = 0
 
-  dfUserDroppedRows = df[df[columnName] != i]
-  
+	while n < len(dropFromRow[key]):
+		deleteValues.append(dropFromRow[key][n])
+		n = n+1
+	for i in deleteValues:
+		print(i)
+		print(key)
+		dfAfterUserDroppedRows = df[df[key] != i]
+		df = dfAfterUserDroppedRows
 
-  
-# display 
-#dfUserDroppedRows
 
-# Delete the rows with label "Ireland"
-# For label-based deletion, set the index first on the dataframe:
-#df = df.set_index("ST_NAME")
-#df = df.drop(["BERKELEY", "PUTNAM"], axis=0) # Delete all rows with label "Ireland"
-
-#df
-dfUserDroppedRows.to_csv (r'/home/amanda/FYP/testcsv/cleanedDataset.csv', index = None, header=True)
+dfAfterUserDroppedRows.to_csv (outputDataset, index = False, header=True)

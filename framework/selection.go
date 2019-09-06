@@ -11,11 +11,11 @@ import (
 	"time"
 )
 
-/*func SendValue(s []string, c chan []string){
+func SendValue(s []string, c chan []string){
 	//send value through channel c
 	c <- s
 }
-*/
+
 func pythonCall(progName string, dataset string){
 	cmd := exec.Command("python3", progName, dataset)
 	cmd.Stdout = os.Stdout
@@ -35,14 +35,17 @@ func main() {
 	fmt.Print(inputDataset)
 
 	//read_line = read_line[:len(read_line)-1]
+	pythonCall("workflow/selection/selectUserDefinedColumns.py", inputDataset)
+	time.Sleep(10000 * time.Millisecond)
 
-	go pythonCall("workflow/selection/selectUserDefinedColumns.py", inputDataset)
-
-
-/*
 	instances := make(chan []string)
 	defer close(instances)
 
+	test()
+
+
+
+/*
 	csvfile, err := os.Create("test.csv")
 
 	if err != nil {
@@ -72,4 +75,16 @@ func main() {
 
 	csvfile.Close()
 	*/
+}
+
+
+func test(){
+	cmd1 := exec.Command("python",  "-c", "from workflow.selection import selectUserDefinedColumns; print selectUserDefinedColumns.dfConcat")
+	fmt.Print(cmd1.Args)
+	out1, err1 := cmd1.CombinedOutput()
+	if err1 != nil { fmt.Println(err1); }
+	//dataframe from user sel cols
+	fmt.Println(string(out1))
+	//df := string(out1)[:len(out1)-1]
+	//fmt.Print(df)
 }

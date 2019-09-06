@@ -6,7 +6,7 @@ from userScript import *
 
 # making data frame from csv file
 #drop values from index label
-df = pd.read_csv(outputDataset)
+df = pd.read_csv(sys_argv[1])
 
 for key, value in selectFromRow.items():
 	selectValues = []

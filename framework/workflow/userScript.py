@@ -72,6 +72,16 @@ userDefinedBinarizeColumns["NumMentions"] = [10.0]
 userDefinedBinarizeColumns["NumSources"] = [10.0]
 userDefinedBinarizeColumns["NumArticles"] = [10.0]
 
+
+#encoding - gives an automatical numerical value to string categorical columns
+userDefinedEncodeColumns = ["Actor1Code"]
+
+#Binning
+userDefinedBinningColumns = OrderedDict()
+#10 = number of bins
+userDefinedBinningColumns["AvgTone"] = [10]
+
+
 #mining
 #which algorithms to use. and relevant params
 

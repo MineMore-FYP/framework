@@ -1,9 +1,14 @@
 #categorise
 import pandas as pd
 import numpy as np
+sys.path.append("..")
+from dataType import *
+from userScript import *
 
-url = "https://raw.githubusercontent.com/dataoptimal/posts/master/data%20cleaning%20with%20python%20and%20pandas/property%20data.csv"
-df = pd.read_csv(url ) 
+#done on integers to categorise into ranges
+
+
+df = pd.read_csv(outputDataset)
 
 #user defined number of categories
 numberOfCategories=3

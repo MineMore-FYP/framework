@@ -12,11 +12,12 @@ outputDataset = "/home/amanda/FYP/testcsv/cleanedDataset.csv"
 
 #SELECTION
 #select columns
-selectColumns = "all" #if "all" select everything. else give a list ["whatever1", "whatever2"]
+#if "all" select everything. else give a list ["whatever1", "whatever2"]
+selectColumns = ["GLOBALEVENTID", "SQLDATE", "Year", "Actor2Code", "Actor2Name", "Actor2Religion1Code", "Actor2Type1Code", "EventCode", "EventRootCode", "QuadClass", "GoldsteinScale", "NumMentions", "NumSources", "NumArticles", "AvgTone", "Actor2Geo_FullName", "SOURCEURL"]
 
 #select rows
 selectFromRow = OrderedDict()
-selectFromRow['Actor1Name'] = ["BRAZIL", "UNITED STATES"]
+selectFromRow['Year'] = [2018, 2019]
 
 
 #CLEANING
@@ -28,15 +29,15 @@ missingValues = ["n/a", "na", "--"]
 
 #Drop user defined cols
 #user defined column array
-dropColumns = ["Actor2Geo_FullName", "ActionGeo_FullName"]
+dropColumns = ["SQLDATE", "SOURCEURL"]
 
 #drop columns according to user defined empty value percentage
 userDefinedColPercentage = 20
 
 #drop user defined rows
 dropFromRow = OrderedDict()
-dropFromRow['Actor1Name'] = ["BRAZIL", "UNITED STATES"]
-dropFromRow['Actor2Name'] = ["PAKISTAN"]
+dropFromRow['Actor2Name'] = ["LONDON", "DUTCH"]
+dropFromRow['EventCode'] = ["40"]
 
 #drop rows according to user defined empty value percentage
 userDefinedRowPercentage = 20
@@ -44,15 +45,17 @@ userDefinedRowPercentage = 20
 #remove duplicate rows
 
 #missing value interpolation
+#all int and float columns interpolated
 interpolateColumns = "all" #if interpolateColumns = "all", all int columns, else give a list
 
 #mode for user defined columns
-modeColumns = ["ActionGeo_CountryCode", "EventCode"]
+#all the rest left from interpolate, mode
+modeColumns = "all"
 
 #fill missing value with a constant
-missingValueCons = OrderedDict()
-missingValueCons["PID"] = 100045
-missingValueCons["SQ_FT"] = 1000
+#missingValueCons = OrderedDict()
+#missingValueCons["PID"] = 100045
+#missingValueCons["SQ_FT"] = 1000
 
 #transformation
 #Standardize
@@ -74,12 +77,12 @@ userDefinedBinarizeColumns["NumArticles"] = [10.0]
 
 
 #encoding - gives an automatical numerical value to string categorical columns
-userDefinedEncodeColumns = ["Actor1Code"]
+userDefinedEncodeColumns = ["Actor2Code", "Actor2Name", "Actor2Religion1Code", "Actor2Type1Code", "Actor2Geo_FullName"]
 
 #Binning
-userDefinedBinningColumns = OrderedDict()
+#userDefinedBinningColumns = OrderedDict()
 #10 = number of bins
-userDefinedBinningColumns["AvgTone"] = [10]
+#userDefinedBinningColumns["AvgTone"] = [10]
 
 
 #mining

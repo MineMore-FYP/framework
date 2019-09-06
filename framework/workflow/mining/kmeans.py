@@ -7,14 +7,14 @@ import numpy as np
 import os,sys,inspect
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
-sys.path.insert(0,parentdir) 
+sys.path.insert(0,parentdir)
 
 import userScript
 
-# making data frame from csv file 
-data = pd.read_csv("D:/FYP/ds/combined.csv",engine = 'python') 
-  
-df = pd.DataFrame(data,columns=userScript.selectedColumns)
+# making data frame from csv file
+data = pd.read_csv("D:/FYP/ds/combined.csv",engine = 'python')
+
+df = pd.DataFrame(data,columns=userScript.selectedColumns1)
 ##print(df)
 header = list(df)
 ##print(list(df))
@@ -29,7 +29,7 @@ for i in header:
             print("x axis: "+i + " , y axis: " + j)
             print(centroids)
             print("\n")
-            
+
             #plt.scatter(df[i], df[j], c= kmeans.labels_.astype(float), s=50, alpha=0.5)
             plt.scatter(X[:,0], X[:,1], c= kmeans.labels_, cmap='rainbow')
             plt.xlabel(i)

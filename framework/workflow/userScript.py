@@ -89,7 +89,10 @@ userDefinedEncodeColumns = ["Actor2Code", "Actor2Name", "Actor2Religion1Code", "
 #which algorithms to use. and relevant params
 
 #kmeans
-selectedColumns = ['QuadClass','GoldsteinScale','NumMentions','NumSources','NumArticles','AvgTone']
+#selectedColumns1 = selectColumns - dropColumns
 number_of_clusters = 3
+
+#linear regression
+#selectedColumns2 = selectColumns - dropColumns
 
 #knowledge presentation

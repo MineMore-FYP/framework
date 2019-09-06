@@ -1,21 +1,25 @@
 import pandas as pd
 import os.path
 import sys
-sys.path.append("..")
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 
-from userScript import *
+import userScript
 
-df = pd.read_csv(inputDataset)
 
-if (selectColumns != "all"):
+df = pd.read_csv(sys.argv[1])
+selectedColumns = userScript.selectColumns
+if (selectedColumns != "all"):
     dfConcat = pd.DataFrame()
 
-    for i in selectColumns:
+    for i in selectedColumns:
         df_i=df[i]
         dfAfterUserSelectedColumns=pd.concat([dfConcat, df_i], axis=1)
         dfConcat=dfAfterUserSelectedColumns
 
-    dfAfterUserSelectedColumns.to_csv (outputDataset, index = False, header=True)
+    dfAfterUserSelectedColumns.to_csv (userScript.outputDataset, index = False, header=True)
 
 else:
-    df.to_csv (outputDataset, index = False, header=True)
+    df.to_csv (userScript.outputDataset, index = False, header=True)

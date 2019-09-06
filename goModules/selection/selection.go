@@ -21,11 +21,19 @@ func pythonCall(progName string, value string){
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os. Stderr
 	log.Println(cmd.Run())
-	time.Sleep(2 * time.Millisecond)	
+	time.Sleep(2 * time.Millisecond)
 }
 
 func main() {
-	//create channel
+	//create
+
+	cmd := exec.Command("python",  "-c", "import pythonfile; print pythonfile.df")
+	fmt.Println(cmd.Args)
+	out, err := cmd.CombinedOutput()
+	if err != nil { fmt.Println(err); }
+	dataframe := string(out)
+	fmt.Println(dataframe)
+
 	instances := make(chan []string)
 	defer close(instances)
 
@@ -42,20 +50,19 @@ func main() {
 
     	for {
         	record, err := r.Read()
-        	
+
 		if err == io.EOF {
             		break
         	}
 
-		go SendValue(record,instances)	
+		go SendValue(record,instances)
 		instance := <-instances
 		fmt.Println(instance)
 		_ = csvwriter.Write(instance)
 
-		//fmt.Printf("\n")		
+		//fmt.Printf("\n")
     	}
 	csvwriter.Flush()
- 
+
 	csvfile.Close()
 }
-

@@ -75,4 +75,8 @@ userDefinedBinarizeColumns["NumArticles"] = [10.0]
 #mining
 #which algorithms to use. and relevant params
 
+#kmeans
+selectedColumns = ['QuadClass','GoldsteinScale','NumMentions','NumSources','NumArticles','AvgTone']
+number_of_clusters = 3
+
 #knowledge presentation

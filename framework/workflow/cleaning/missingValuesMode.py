@@ -2,13 +2,17 @@ import pandas as pd
 import numpy as np
 import statistics
 
-sys.path.append("..")
-from userScript import *
-from dataType import *
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 
-df = pd.read_csv(outputDataset)
+import dataType
+import userScript
+
+df = pd.read_csv(sys.argv[1])
 #********************************** WHAT HAPPENS WHEN MODE IS NAN *************************************************************************
-colNames = modeColumns
+colNames = userScript.modeColumns
 
 for col in colNames:
 	modeOfCol = statistics.mode(df[col])
@@ -17,4 +21,4 @@ for col in colNames:
 	else:
 		print("Can't fill with mode. The mode of ", col, " is NaN")
 
-df.to_csv (outputDataset, index = False, header=True)
+df.to_csv (sys.argv[1], index = False, header=True)

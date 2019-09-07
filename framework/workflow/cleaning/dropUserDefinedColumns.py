@@ -1,14 +1,18 @@
 import pandas as pd
 import numpy as np
 import sys
-sys.path.append("..")
-from userScript import *
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 
-df = pd.read_csv(outputDataset)
+import userScript
+
+df = pd.read_csv(sys.argv[1])
 
 #dropColumns list from userScript
-dropCols = dropColumns
+dropCols = userScript.dropColumns
 
 dfUserDroppedCols = df.drop(dropCols, axis=1)
 
-dfUserDroppedCols.to_csv (outputDataset, index = False, header=True)
+dfUserDroppedCols.to_csv (sys.argv[1], index = False, header=True)

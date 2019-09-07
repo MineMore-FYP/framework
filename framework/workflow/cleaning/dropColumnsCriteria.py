@@ -1,8 +1,12 @@
 import pandas as pd
 import numpy as np
 import sys
-sys.path.append("..")
-from userScript import *
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
+
+import userScript
 
 #function to count thr number of missing values in a given column
 def countMissingValues(colName, df):
@@ -11,10 +15,10 @@ def countMissingValues(colName, df):
 
 
 #read csv with defined missing values
-df = pd.read_csv(outputDataset)
+df = pd.read_csv(sys.argv[1])
 
 #user defined percentage of maximum of allowed missing values
-maxPercentageOfMissingValues= userDefinedColPercentage
+maxPercentageOfMissingValues= userScript.userDefinedColPercentage
 
 colNames = list(df)
 noOfRows = df.shape[0]
@@ -28,4 +32,4 @@ for i in colNames:
   if ((noMissingValues/noOfRows)>(maxPercentageOfMissingValues/100)):
     dfMissingValueCriteriaDropped = dfMissingValueCriteriaDropped.drop(i, axis=1)
 
-dfMissingValueCriteriaDropped.to_csv (outputDataset, index = False, header=True)
+dfMissingValueCriteriaDropped.to_csv (sys.argv[1], index = False, header=True)

@@ -1,9 +1,9 @@
 import pandas as pd
 import os.path
 import sys
+from csv import reader
 
-
-df = sys.argv[1]
+df = reader(sys.argv[1])
 selectedColumns = ["GOLBALEVENTID"]
 
 df1 = df[selectedColumns]

@@ -6,4 +6,3 @@ def cat_strings(a, b):
 
 df = pd.read_csv("/home/amanda/FYP/testcsv/test.csv")
 
-

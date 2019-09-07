@@ -13,7 +13,7 @@ outputDataset = "D:/FYP/ds/cleanedDataset.csv"
 #SELECTION
 #select columns
 #if "all" select everything. else give a list ["whatever1", "whatever2"]
-selectColumns = ["GLOBALEVENTID", "SQLDATE", "Year", "Actor2Code", "Actor2Name", "Actor2Religion1Code", "Actor2Type1Code", "EventCode", "EventRootCode", "QuadClass", "GoldsteinScale", "NumMentions", "NumSources", "NumArticles", "AvgTone", "Actor2Geo_FullName", "SOURCEURL"]
+selectColumns = ["GLOBALEVENTID","SQLDATE", "Year", "Actor2Code", "Actor2Name", "Actor2Religion1Code", "Actor2Type1Code", "EventCode", "EventRootCode", "QuadClass", "GoldsteinScale", "NumMentions", "NumSources", "NumArticles", "AvgTone", "Actor2Geo_FullName", "SOURCEURL"]
 
 #select rows
 selectFromRow = OrderedDict()

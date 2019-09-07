@@ -25,7 +25,7 @@ func pythonCall(progName string, dataset string){
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os. Stderr
 	log.Println(cmd.Run())
-	time.Sleep(2 * time.Millisecond)
+	//time.Sleep(2 * time.Millisecond)
 }
 
 func main() {
@@ -47,6 +47,8 @@ func main() {
 	outputDataset := string(out1)[:len(out1)-1]
 	fmt.Print(outputDataset)
 
+///////////////////////////*****************SELECTION************************////////////////////////
+
   //select user defined cols
 	go pythonCall("workflow/selection/selectUserDefinedColumns.py", inputDataset)
 	time.Sleep(10000 * time.Millisecond)
@@ -55,13 +57,16 @@ func main() {
 	channel := make(chan string)
 	defer close(channel)
   go SendValue(outputDataset, channel)
-  output1 := <-channel
-  fmt.Println(output1)
+  output := <-channel
+  fmt.Println(output)
   time.Sleep(10000 * time.Millisecond)
 
+///////////////////////////*****************CLEANING************************////////////////////////
+
   //drop unique cols
-	go pythonCall("workflow/cleaning/dropUniqueColumns.py", output1)
+	go pythonCall("workflow/cleaning/dropUniqueColumns.py", output)
 	time.Sleep(10000 * time.Millisecond)
+
 
   //channel
 	channel1 := make(chan string)
@@ -71,8 +76,98 @@ func main() {
   fmt.Println(output1)
   time.Sleep(10000 * time.Millisecond)
 
+  //drop one value cols
+  go pythonCall("workflow/cleaning/dropOneValueColumns.py", output1)
+  time.Sleep(10000 * time.Millisecond)
+
+  //channel
+  channel2 := make(chan string)
+  defer close(channel2)
+  go SendValue(outputDataset, channel2)
+  output2 := <-channel2
+  fmt.Println(output2)
+  time.Sleep(10000 * time.Millisecond)
+
+  //Drop user defined cols
+  go pythonCall("workflow/cleaning/dropUserDefinedColumns.py", output2)
+  time.Sleep(10000 * time.Millisecond)
+
+  //channel
+  channel3 := make(chan string)
+  defer close(channel3)
+  go SendValue(outputDataset, channel3)
+  output3 := <-channel3
+  fmt.Println(output3)
+  time.Sleep(10000 * time.Millisecond)
+
+  //#drop columns according to user defined empty value percentage
+  go pythonCall("workflow/cleaning/dropColumnsCriteria.py", output3)
+  time.Sleep(10000 * time.Millisecond)
+
+  //channel
+  channel4 := make(chan string)
+  defer close(channel4)
+  go SendValue(outputDataset, channel4)
+  output4 := <-channel4
+  fmt.Println(output4)
+  time.Sleep(10000 * time.Millisecond)
+
+  //#drop user defined rows
+  go pythonCall("workflow/cleaning/dropUserDefinedRows.py", output4)
+  time.Sleep(10000 * time.Millisecond)
+
+  //channel
+  channel5 := make(chan string)
+  defer close(channel5)
+  go SendValue(outputDataset, channel5)
+  output5 := <-channel5
+  fmt.Println(output5)
+  time.Sleep(10000 * time.Millisecond)
+
+  //drop rows according to user defined empty value percentage
+  go pythonCall("workflow/cleaning/dropRowsCriteria.py", output5)
+  time.Sleep(10000 * time.Millisecond)
+
+  //channel
+  channel6 := make(chan string)
+  defer close(channel6)
+  go SendValue(outputDataset, channel6)
+  output6 := <-channel6
+  fmt.Println(output6)
+  time.Sleep(10000 * time.Millisecond)
+
+  //#remove duplicate rows
+  go pythonCall("workflow/cleaning/removeDuplicateRows.py", output6)
+  time.Sleep(10000 * time.Millisecond)
+
+  //channel
+  channel7 := make(chan string)
+  defer close(channel7)
+  go SendValue(outputDataset, channel7)
+  output7 := <-channel7
+  fmt.Println(output7)
+  time.Sleep(10000 * time.Millisecond)
+
+  //missing value interpolation
+  go pythonCall("workflow/cleaning/missingValuesInterpolate.py", output7)
+  time.Sleep(10000 * time.Millisecond)
+
+  //channel
+  channel8 := make(chan string)
+  defer close(channel8)
+  go SendValue(outputDataset, channel8)
+  output8 := <-channel8
+  fmt.Println(output8)
+  time.Sleep(10000 * time.Millisecond)
+
+  //mode for user defined columns
+  go pythonCall("workflow/cleaning/missingValuesMode.py", output8)
+  time.Sleep(10000 * time.Millisecond)
+
 
 }
+
+
 /*
 func csvWriter(){
 

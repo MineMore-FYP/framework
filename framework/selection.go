@@ -4,7 +4,7 @@ import (
 	//"bufio"
   //"encoding/csv"
   "os"
-	"os/exec"
+  "os/exec"
   "fmt"
   //"io"
 	"log"
@@ -17,7 +17,7 @@ func SendValue(s []string, c chan []string){
 }
 
 func pythonCall(progName string, dataset string){
-	cmd := exec.Command("python3", progName, dataset)
+	cmd := exec.Command("python", progName, dataset)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os. Stderr
 	log.Println(cmd.Run())
@@ -26,7 +26,7 @@ func pythonCall(progName string, dataset string){
 
 func main() {
 	//create
-	cmd := exec.Command("python",  "-c", "from workflow import userScript; print userScript.inputDataset")
+	cmd := exec.Command("python", "-c", "from workflow import userScript; print userScript.inputDataset")
 	fmt.Print(cmd.Args)
 	out, err := cmd.CombinedOutput()
 	if err != nil { fmt.Println(err); }

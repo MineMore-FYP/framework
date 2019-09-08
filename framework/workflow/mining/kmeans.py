@@ -12,6 +12,7 @@ import numpy as np
 ##import userScript
 
 # making data frame from csv file
+
 data = pd.read_csv("D:/FYP/ds/outputDataset.csv",engine = 'python')
 
 df = pd.DataFrame(data)
@@ -36,4 +37,4 @@ for i in header:
             plt.ylabel(j)
             #plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
             plt.scatter(centroids[:, 0], centroids[:, 1], c='black')
-            plt.savefig("D:/FYP/ds/plots/"+ i + "-" + j + ".png")
+            plt.savefig("/home/amanda/FYP/plots/"+ i + "-" + j + ".png")

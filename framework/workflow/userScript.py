@@ -77,7 +77,7 @@ userDefinedBinarizeColumns["NumArticles"] = [10.0]
 
 
 #encoding - gives an automatical numerical value to string categorical columns
-userDefinedEncodeColumns = ["Actor2Code", "Actor2Name", "Actor2Religion1Code", "Actor2Type1Code", "Actor2Geo_FullName"]
+userDefinedEncodeColumns = ["Actor2Code", "Actor2Name", "Actor2Geo_FullName"]
 
 #Binning
 #userDefinedBinningColumns = OrderedDict()

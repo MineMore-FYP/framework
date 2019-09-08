@@ -15,7 +15,7 @@ import dataType
 df = pandas.read_csv(sys.argv[1])
 
 for key, value in userScript.userDefinedRescaleColumns.items():
-    if dataType.dataType(col, df) != "str":
+    if dataType.dataType(key, df) != "str":
         lowerBound = value[0]
         upperBound = value[1]
         col = key
@@ -31,4 +31,4 @@ for key, value in userScript.userDefinedRescaleColumns.items():
     else:
         print("The column, ", col, "is of type: string. Cannot rescale")
 
-dataframe.to_csv (sys.argv[1], index = False, header=True)
+df.to_csv (sys.argv[1], index = False, header=True)

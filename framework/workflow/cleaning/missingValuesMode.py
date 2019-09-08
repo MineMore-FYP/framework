@@ -10,9 +10,8 @@ sys.path.insert(0,parentdir)
 import dataType
 import userScript
 
-df = pd.read_csv(sys.argv[1])
-#********************************** WHAT HAPPENS WHEN MODE IS NAN *************************************************************************
-
+df = pd.read_csv(userScript.outputDataset)
+#drop unique columns
 numOfRows = df.shape[0]
 
 for col in df.columns:
@@ -20,23 +19,19 @@ for col in df.columns:
         df.drop(col,inplace=True,axis=1)
 
 if(userScript.modeColumns == "all"):
-    #Interpolate all integer columns
+    #Mode of all columns
     colNames = list(df)
 else:
-    #Interpolate user defined columns
+    #Mode of user defined columns
     colNames = userScript.modeColumns
+
 
 df2 = df
 df1 = pd.DataFrame()
 for col in colNames:
 
-	#if (modeOfCol!= "NaN"):
-
 	df1 = df[col].dropna()
-	print(col)
-	modeOfCol = statistics.mode(df1[col])
+	modeOfCol = statistics.mode(df1)
 	df2[col].fillna(modeOfCol, inplace = True)
-	#else:
-	print("Can't fill with mode. The mode of ", col, " is", modeOfCol)
 
-df2.to_csv (sys.argv[1], index = False, header=True)
+df2.to_csv(userScript.outputDataset, index = False, header=True)

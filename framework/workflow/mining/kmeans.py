@@ -20,12 +20,12 @@ df = pd.DataFrame(data)
 ##print(df)
 header = list(df)
 ##print(list(df))
-pp = PdfPages('D:/FYP/ds/plots.pdf')
+pp = PdfPages('plots.pdf')
 for i in header:
     for j in header:
         if(i != j):
             dfin = DataFrame(data,columns=[i,j])
-            X = dfin.to_numpy()
+            X = dfin.values
             kmeans = KMeans(n_clusters=3).fit(X)
             centroids = kmeans.cluster_centers_
             print("x axis: "+i + " , y axis: " + j)

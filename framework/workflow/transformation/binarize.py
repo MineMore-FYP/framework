@@ -3,15 +3,19 @@ from sklearn.preprocessing import Binarizer
 import pandas
 import numpy
 import scipy
-sys.path.append("..")
-from dataType import *
-from userScript import *
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 
-dataframe = pandas.read_csv(outputDataset, names=names)
+import userScript
+import dataType
+
+dataframe = pandas.read_csv(sys.argv[1], names=names)
 
 
-for key, value in userDefinedBinarizeColumns.items():
-    if dataType(col, df) != "str":
+for key, value in userScript.userDefinedBinarizeColumns.items():
+    if dataType.dataType(col, df) != "str":
         #user defined threshold
         userThreshold= value[0]
         col = key
@@ -27,4 +31,4 @@ for key, value in userDefinedBinarizeColumns.items():
     else:
         print("The column, ", col, "is of type: string. Cannot binarize")
 
-dataframe.to_csv (outputDataset, index = False, header=True)
+dataframe.to_csv (sys.argv[1], index = False, header=True)

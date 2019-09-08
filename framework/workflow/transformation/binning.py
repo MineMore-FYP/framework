@@ -1,12 +1,16 @@
 #Binning for integer features:
 import pandas as pd
 import numpy as np
-sys.path.append("..")
-from dataType import *
-from userScript import *
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 
-df = pd.read_csv(outputDataset)
-columnNames = userDefinedBinningColumns
+import userScript
+import dataType
+
+df = pd.read_csv(sys.argv[1])
+columnNames = userScript.userDefinedBinningColumns
 
 for col in columnNames:
     #df_no_missing = data[colName].dropna()

@@ -3,14 +3,19 @@ import pandas
 import scipy
 import numpy
 from sklearn.preprocessing import MinMaxScaler
-sys.path.append("..")
-from dataType import *
-from userScript import *
+import sys
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 
-df = pandas.read_csv(outputDataset)
+import userScript
+import dataType
 
-for key, value in userDefinedRescaleColumns.items():
-    if dataType(col, df) != "str":
+df = pandas.read_csv(sys.argv[1])
+
+for key, value in userScript.userDefinedRescaleColumns.items():
+    if dataType.dataType(col, df) != "str":
         lowerBound = value[0]
         upperBound = value[1]
         col = key
@@ -26,4 +31,4 @@ for key, value in userDefinedRescaleColumns.items():
     else:
         print("The column, ", col, "is of type: string. Cannot rescale")
 
-dataframe.to_csv (outputDataset, index = False, header=True)
+dataframe.to_csv (sys.argv[1], index = False, header=True)

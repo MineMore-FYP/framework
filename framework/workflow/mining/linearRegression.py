@@ -12,34 +12,7 @@ sys.path.insert(0,parentdir)
 
 import userScript
 
-dataset = pd.read_csv("D:/FYP/ds/combined.csv",engine = 'python')
-
-##X = dataset['NumSources'].values.reshape(-1,1)
-##y = dataset['GoldsteinScale'].values.reshape(-1,1)
-##
-##X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
-##
-##regressor = LinearRegression()
-##regressor.fit(X_train, y_train) #training the algorithm
-##
-###To retrieve the intercept:
-##print(regressor.intercept_)
-###For retrieving the slope:
-##print(regressor.coef_)
-##
-##y_pred = regressor.predict(X_test)
-##
-##df = pd.DataFrame({'Actual': y_test.flatten(), 'Predicted': y_pred.flatten()})
-##
-##print(df)
-##
-##print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
-##print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
-##print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
-##
-##plt.scatter(X_test, y_test,  color='gray')
-##plt.plot(X_test, y_pred, color='red', linewidth=2)
-##plt.show()
+dataset = pd.read_csv(sys.argv[1],engine = 'python')
 
 df = pd.DataFrame(dataset,columns=userScript.selectedColumns2)
 ##print(df)

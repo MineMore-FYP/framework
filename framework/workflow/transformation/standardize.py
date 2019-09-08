@@ -18,14 +18,14 @@ dataframe = pandas.read_csv(sys.argv[1])
 colNames = userScript.userDefinedStandardizeColumns
 
 for col in colNames:
-    if dataType.dataType(col, df) != "str":
+    if dataType.dataType(col, dataframe) != "str":
         standardizeColumn = dataframe.filter([col], axis=1)
         dataframe = dataframe.drop(col, axis=1)
 
         array = standardizeColumn.values
         scaler = StandardScaler().fit(array)
         standardized = scaler.transform(array)
-        
+
         dataframe[col] = standardized
     else:
         print("The column, ", col, "is of type: string. Cannot standardize")

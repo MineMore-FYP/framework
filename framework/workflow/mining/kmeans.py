@@ -12,11 +12,10 @@ sys.path.insert(0,parentdir)
 import userScript
 
 # making data frame from csv file
-data = pd.read_csv(sys.argv[1],engine = 'python')
+data = pd.read_csv(userScript.outputDataset, engine = 'python')
 
-df = pd.DataFrame(data,columns=userScript.selectedColumns1)
-##print(df)
-header = list(df)
+
+header = list(data)
 ##print(list(df))
 
 for i in header:
@@ -36,4 +35,4 @@ for i in header:
             plt.ylabel(j)
             #plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
             plt.scatter(centroids[:, 0], centroids[:, 1], c='black')
-            plt.savefig("D:/FYP/ds/plots/"+ i + "-" + j + ".png")
+            plt.savefig("/home/amanda/FYP/plots/"+ i + "-" + j + ".png")

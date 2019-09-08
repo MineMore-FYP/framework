@@ -5,6 +5,7 @@ import seaborn as seabornInstance
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
+from matplotlib.backends.backend_pdf import PdfPages
 import os,sys,inspect
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
@@ -12,13 +13,13 @@ sys.path.insert(0,parentdir)
 
 import userScript
 
-dataset = pd.read_csv(sys.argv[1],engine = 'python')
+dataset = pd.read_csv(userScript.outputDataset,engine = 'python')
 
-df = pd.DataFrame(dataset,columns=userScript.selectedColumns2)
+df = pd.DataFrame(dataset)
 ##print(df)
 header = list(df)
 ##print(list(df))
-
+pp = PdfPages('plots2.pdf')
 for i in header:
     for j in header:
         if(i != j):
@@ -47,4 +48,6 @@ for i in header:
 
             plt.scatter(X_test, y_test,  color='gray')
             plt.plot(X_test, y_pred, color='red', linewidth=2)
-            plt.savefig("D:/FYP/ds/plots/"+ i + "-" + j + ".png")
+            #plt.savefig("D:/FYP/ds/plots/"+ i + "-" + j + ".png")
+	    plt.savefig(pp, format='pdf')
+pp.close()

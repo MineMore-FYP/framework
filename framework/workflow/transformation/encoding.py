@@ -2,15 +2,18 @@
 import pandas as pd
 import numpy as np
 import sys
-sys.path.append("..")
-from dataType import *
-from userScript import *
 # Import LabelEncoder
 from sklearn import preprocessing
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 
-df = pd.read_csv(outputDataset)
+import userScript
 
-columnNames = userDefinedEncodeColumns
+df = pd.read_csv(sys.argv[1])
+
+columnNames = userScript.userDefinedEncodeColumns
 
 for col in columnNames:
     encodeColumn=df[col].astype(str)
@@ -25,4 +28,4 @@ for col in columnNames:
 
     print(encodedData)
 
-df.to_csv (outputDataset, index = False, header=True)
+df.to_csv (sys.argv[1], index = False, header=True)

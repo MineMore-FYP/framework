@@ -229,7 +229,7 @@ func main() {
 
 /////////////////KMEANS////////////////
 go pythonCall("workflow/mining/kmeans.py", output13)
-time.Sleep(360000 * time.Millisecond)
+time.Sleep(12000 * time.Millisecond)
 fmt.Println("KMeans complete")
 /*
 

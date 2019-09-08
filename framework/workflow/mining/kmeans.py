@@ -20,7 +20,7 @@ df = pd.DataFrame(data)
 ##print(df)
 header = list(df)
 ##print(list(df))
-pp = PdfPages('plots.pdf')
+pp = PdfPages('plot_Kmeans.pdf')
 for i in header:
     for j in header:
         if(i != j):

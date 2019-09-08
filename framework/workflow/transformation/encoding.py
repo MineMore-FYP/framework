@@ -26,6 +26,6 @@ for col in columnNames:
 
     df[col] = encodedData
 
-    print(encodedData)
+    #print(encodedData)
 
 df.to_csv (sys.argv[1], index = False, header=True)

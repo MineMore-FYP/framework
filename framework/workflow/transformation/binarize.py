@@ -11,11 +11,11 @@ sys.path.insert(0,parentdir)
 import userScript
 import dataType
 
-dataframe = pandas.read_csv(sys.argv[1], names=names)
+df = pandas.read_csv(sys.argv[1]) # reemoved , names=names
 
 
 for key, value in userScript.userDefinedBinarizeColumns.items():
-    if dataType.dataType(col, df) != "str":
+    if dataType.dataType(key, df) != "str":
         #user defined threshold
         userThreshold= value[0]
         col = key
@@ -31,4 +31,4 @@ for key, value in userScript.userDefinedBinarizeColumns.items():
     else:
         print("The column, ", col, "is of type: string. Cannot binarize")
 
-dataframe.to_csv (sys.argv[1], index = False, header=True)
+df.to_csv (sys.argv[1], index = False, header=True)

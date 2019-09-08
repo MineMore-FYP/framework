@@ -8,7 +8,6 @@ sys.path.insert(0,parentdir)
 import dataType
 import userScript
 
-
 df = pd.read_csv(sys.argv[1])
 
 if(userScript.interpolateColumns == "all"):
@@ -24,6 +23,4 @@ for col in colNames:
         df[col] = df[col].interpolate(method ='linear', limit_direction ='forward')
     else:
         #print("The column, ", col, "is of type: string. Cannot interpolate")
-
-
-df.to_csv (sys.argv[1], index = None, header=True)
+        df.to_csv (sys.argv[1], index = None, header=True)

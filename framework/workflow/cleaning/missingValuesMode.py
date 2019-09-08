@@ -12,13 +12,31 @@ import userScript
 
 df = pd.read_csv(sys.argv[1])
 #********************************** WHAT HAPPENS WHEN MODE IS NAN *************************************************************************
-colNames = userScript.modeColumns
 
+numOfRows = df.shape[0]
+
+for col in df.columns:
+    if len(df[col].unique()) == numOfRows:
+        df.drop(col,inplace=True,axis=1)
+
+if(userScript.modeColumns == "all"):
+    #Interpolate all integer columns
+    colNames = list(df)
+else:
+    #Interpolate user defined columns
+    colNames = userScript.modeColumns
+
+df2 = df
+df1 = pd.DataFrame()
 for col in colNames:
-	modeOfCol = statistics.mode(df[col])
-	if (modeOfCol!= "NaN"):
-		df[col].fillna(modeOfCol, inplace = True)
-	else:
-		print("Can't fill with mode. The mode of ", col, " is NaN")
 
-df.to_csv (sys.argv[1], index = False, header=True)
+	#if (modeOfCol!= "NaN"):
+
+	df1 = df[col].dropna()
+	print(col)
+	modeOfCol = statistics.mode(df1[col])
+	df2[col].fillna(modeOfCol, inplace = True)
+	#else:
+	print("Can't fill with mode. The mode of ", col, " is", modeOfCol)
+
+df2.to_csv (sys.argv[1], index = False, header=True)

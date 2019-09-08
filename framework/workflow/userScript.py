@@ -5,10 +5,10 @@ import sys
 #Workflow
 
 #input   location
-inputDataset = "D:/FYP/ds/test.csv"
+inputDataset = "/home/amanda/FYP/testcsv/test.csv"
 
 #specify output locatiion
-outputDataset = "D:/FYP/ds/cleanedDataset.csv"
+outputDataset = "/home/amanda/FYP/testcsv/outputDataset.csv"
 
 #SELECTION
 #select columns
@@ -32,7 +32,7 @@ missingValues = ["n/a", "na", "--"]
 dropColumns = ["SQLDATE", "SOURCEURL"]
 
 #drop columns according to user defined empty value percentage
-userDefinedColPercentage = 20
+userDefinedColPercentage = 30
 
 #drop user defined rows
 dropFromRow = OrderedDict()

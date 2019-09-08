@@ -12,7 +12,7 @@ sys.path.insert(0,parentdir)
 import userScript
 
 # making data frame from csv file
-data = pd.read_csv("D:/FYP/ds/combined.csv",engine = 'python')
+data = pd.read_csv(sys.argv[1],engine = 'python')
 
 df = pd.DataFrame(data,columns=userScript.selectedColumns1)
 ##print(df)

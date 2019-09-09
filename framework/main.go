@@ -21,7 +21,7 @@ func work(messages chan<- string) {
 }
 
 func pythonCall(progName string, dataset string){
-	cmd := exec.Command("python3", progName, dataset)
+	cmd := exec.Command("python3.6", progName, dataset)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os. Stderr
 	log.Println(cmd.Run())
@@ -227,21 +227,19 @@ func main() {
 
 ///////////////////////////*****************MINING************************////////////////////////
 
-/*
 /////////////////KMEANS////////////////
 go pythonCall("workflow/mining/kmeans.py", output13)
-time.Sleep(120000 * time.Millisecond)
+//time.Sleep(120000 * time.Millisecond)
 fmt.Println("Kmeans complete")
-*/
+
+
 
 //////////////////LinearRegression/////////////////
 
 go pythonCall("workflow/mining/linearRegression.py", output13)
-time.Sleep(120000 * time.Millisecond)
 fmt.Println("Linear Regression complete")
 
-
-
+time.Sleep(120000 * time.Millisecond)
 
 }
 

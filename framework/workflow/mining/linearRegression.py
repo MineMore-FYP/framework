@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as seabornInstance
-from sklearn.model_selection import train_test_split
+#import seaborn as seabornInstance
+from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 from matplotlib.backends.backend_pdf import PdfPages
@@ -13,7 +13,7 @@ sys.path.insert(0,parentdir)
 
 import userScript
 
-dataset = pd.read_csv("D:/FYP/ds/outputDataset.csv",engine = 'python')
+dataset = pd.read_csv(userScript.outputDataset,engine = 'python')
 
 df = pd.DataFrame(dataset)
 ##print(df)
@@ -52,5 +52,5 @@ for i in header:
             plt.ylabel(j)
             plt.plot(X_test, y_pred, color='red', linewidth=2)
             plt.savefig(pp, format='pdf')
-	    
+            plt.close()
 pp.close()

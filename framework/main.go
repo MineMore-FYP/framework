@@ -21,7 +21,7 @@ func work(messages chan<- string) {
 }
 
 func pythonCall(progName string, dataset string){
-	cmd := exec.Command("python3", progName, dataset)
+	cmd := exec.Command("python3.6", progName, dataset)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os. Stderr
 	log.Println(cmd.Run())

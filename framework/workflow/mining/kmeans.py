@@ -40,4 +40,5 @@ for i in header:
             plt.scatter(centroids[:, 0], centroids[:, 1], c='black')
 ##            plt.savefig("/home/amanda/FYP/plots/"+ i + "-" + j + ".png")
             plt.savefig(pp, format='pdf')
+	    plt.close()
 pp.close()

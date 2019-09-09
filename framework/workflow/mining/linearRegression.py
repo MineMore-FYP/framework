@@ -52,5 +52,5 @@ for i in header:
             plt.ylabel(j)
             plt.plot(X_test, y_pred, color='red', linewidth=2)
             plt.savefig(pp, format='pdf')
-	    
+	    plt.close()
 pp.close()

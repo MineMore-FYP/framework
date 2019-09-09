@@ -5,17 +5,16 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 import numpy as np
 from matplotlib.backends.backend_pdf import PdfPages
-import os,sys,inspect
-currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parentdir = os.path.dirname(currentdir)
-sys.path.insert(0,parentdir)
-
-import userScript
+##import os,sys,inspect
+##currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+##parentdir = os.path.dirname(currentdir)
+##sys.path.insert(0,parentdir)
+##
+##import userScript
 
 # making data frame from csv file
 
-data = pd.read_csv(userScript.outputDataset,engine = 'python')
-
+data = pd.read_csv("D:/FYP/ds/outputDataset.csv",engine = 'python')
 df = pd.DataFrame(data)
 ##print(df)
 header = list(df)
@@ -40,4 +39,5 @@ for i in header:
             plt.scatter(centroids[:, 0], centroids[:, 1], c='black')
 ##            plt.savefig("/home/amanda/FYP/plots/"+ i + "-" + j + ".png")
             plt.savefig(pp, format='pdf')
+            plt.close()
 pp.close()

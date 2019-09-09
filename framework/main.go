@@ -237,7 +237,7 @@ fmt.Println("Kmeans complete")
 go pythonCall("workflow/mining/linearRegression.py", output13)
 fmt.Println("Linear Regression complete")
 
-time.Sleep(120000 * time.Millisecond)
+time.Sleep(60000 * time.Millisecond)
 
 }
 

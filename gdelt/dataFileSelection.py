@@ -10,7 +10,7 @@ import glob
 #path = 'D:/FYP/ds'
 
 #Amanda
-path = '/home/amanda/FYP/ds'
+path = '/home/rajini/FYP'
 os.chdir(path)
 
 allFiles = os.listdir(path)

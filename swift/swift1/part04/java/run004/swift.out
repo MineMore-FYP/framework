@@ -1,6 +1,0 @@
-Swift 0.96.2 git-rev: b9611649002eecd640fc6c58bbb88cb35ce03539 heads/release-0.96-swift 6287
-RunID: run004
-Could not start execution:
-	Compile error in assignment at line 9: Compile error in procedure invocation at line 8:
-	Compile error in procedure invocation at line 8:
-	Formal argument null doesn't exist

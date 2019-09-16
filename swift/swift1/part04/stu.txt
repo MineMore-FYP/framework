@@ -1,4 +1,0 @@
-name,age,gpa
-101-name.txt, 101-age.txt, 101-gpa.txt
-name55.txt,age55.txt,age55.txt
-q,r,s

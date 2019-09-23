@@ -5,10 +5,18 @@ import sys
 #Workflow
 
 #input   location
+<<<<<<< HEAD:framework/workflow/userScript.py
+#inputDataset = "/home/amanda/FYP/testcsv/test.csv"
+inputDataset = "/home/rajini/FYP/testcsv/test.csv"
+#specify output locatiion
+#outputDataset = "/home/amanda/FYP/testcsv/outputDataset.csv"
+outputDataset = "/home/rajini/FYP/testcsv/out.csv"
+=======
 inputDataset = "/home/rajini/FYP/testcsv/test.csv"
 
 #specify output locatiion
 outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
+>>>>>>> master:workflow/userScript.py
 
 #SELECTION
 #select columns

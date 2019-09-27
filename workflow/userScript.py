@@ -7,10 +7,10 @@ import sys
 #input   location
 
 #inputDataset = "/home/amanda/FYP/testcsv/test.csv"
-inputDataset = "/home/rajini/FYP/testcsv/test.csv"
+inputDataset = "/home/rajini/FYP/testcsv/Combined.csv"
 #specify output locatiion
 #outputDataset = "/home/amanda/FYP/testcsv/outputDataset.csv"
-outputDataset = "/home/rajini/FYP/testcsv/out.csv"
+outputDataset = "/home/rajini/Desktop/out.csv"
 
 #SELECTION
 #select columns
@@ -20,7 +20,6 @@ selectColumns = ["GLOBALEVENTID","SQLDATE", "Year", "Actor2Code", "Actor2Name", 
 #select rows
 selectFromRow = OrderedDict()
 selectFromRow['Year'] = [2018, 2019]
-
 
 #CLEANING
 #Drop unique columns

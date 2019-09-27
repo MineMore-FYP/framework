@@ -52,7 +52,7 @@ func main() {
 	outputDataset := string(out1)[:len(out1)-1]
 	//fmt.Print(outputDataset)
 
-	///////////////////////////*****************SELECTION************************////////////////////////
+	///////////////////////////______________________________________SELECTION______________________________________////////////////////////
 
 	//select user defined cols
 	go pythonCall("workflow/selection/selectUserDefinedColumns.py", inputDataset)
@@ -66,7 +66,7 @@ func main() {
 	output := <-channel
 	time.Sleep(10000 * time.Millisecond)
 
-	///////////////////////////*****************CLEANING************************////////////////////////
+	///////////////////////////______________________________________CLEANING______________________________________////////////////////////
 
 	//drop unique cols
 	go pythonCall("workflow/cleaning/dropUniqueColumns.py", output)
@@ -84,6 +84,7 @@ func main() {
 	go pythonCall("workflow/cleaning/dropOneValueColumns.py", output1)
 	time.Sleep(10000 * time.Millisecond)
 	fmt.Println("Drop one value columns complete")
+
 
 	//channel
 	channel2 := make(chan string)
@@ -107,20 +108,21 @@ func main() {
 	//#drop columns according to user defined empty value percentage
 	go pythonCall("workflow/cleaning/dropColumnsCriteria.py", output3)
 	time.Sleep(10000 * time.Millisecond)
+	fmt.Println("Drop user defined column criteria complete")
+
+	//channel
+	channel4 := make(chan string)
+	defer close(channel4)
+	go SendValue(outputDataset, channel4)
+	output4 := <-channel4
+	time.Sleep(10000 * time.Millisecond)
+
+
+	//#drop user defined rows
+	go pythonCall("workflow/cleaning/dropUserDefinedRows.py", output4)
+	time.Sleep(10000 * time.Millisecond)
 	fmt.Println("Drop user defined rows complete")
-
-	/*//channel
-	  channel4 := make(chan string)
-	  defer close(channel4)
-	  go SendValue(outputDataset, channel4)
-	  output4 := <-channel4
-	  fmt.Println("Drop columns criteria complete")
-	  time.Sleep(10000 * time.Millisecond)
-
-	  //#drop user defined rows
-	  go pythonCall("workflow/cleaning/dropUserDefinedRows.py", output4)
-	  time.Sleep(10000 * time.Millisecond)
-	*/
+	
 	//channel
 	channel5 := make(chan string)
 	defer close(channel5)
@@ -144,7 +146,7 @@ func main() {
 	go pythonCall("workflow/cleaning/removeDuplicateRows.py", output6)
 	time.Sleep(10000 * time.Millisecond)
 	fmt.Println("Remove duplicate rows complete")
-
+/*
 	//channel
 	channel7 := make(chan string)
 	defer close(channel7)
@@ -176,7 +178,7 @@ func main() {
 	output9 := <-channel9
 	time.Sleep(10000 * time.Millisecond)
 
-	///////////////////////////*****************TRANSFORMATION************************////////////////////////
+	///////////////////////////______________________________________TRANSFORMATION______________________________________///////////////////////
 	//standardize user defined columns
 	go pythonCall("workflow/transformation/standardize.py", output9)
 	time.Sleep(10000 * time.Millisecond)
@@ -225,7 +227,7 @@ func main() {
 	output13 := <-channel13
 	time.Sleep(10000 * time.Millisecond)
 
-	///////////////////////////*****************MINING************************////////////////////////
+	///////////////////////////______________________________________MINING______________________________________////////////////////////
 
 	/////////////////KMEANS////////////////
 	go pythonCall("workflow/mining/kmeans.py", output13)
@@ -236,6 +238,7 @@ func main() {
 	fmt.Println("Linear Regression complete")
 
 	time.Sleep(60000 * time.Millisecond)
+*/
 
 }
 
@@ -255,7 +258,6 @@ fmt.Println("Linear Regression complete")
 time.Sleep(60000 * time.Millisecond)
 
 }
-
 
 /*
 func csvWriter(){

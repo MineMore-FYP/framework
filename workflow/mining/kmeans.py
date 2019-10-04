@@ -1,7 +1,6 @@
 import pandas as pd
 import csv
 from pandas import DataFrame
-from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 import numpy as np
@@ -20,14 +19,13 @@ df = pd.DataFrame(data)
 ##print(df)
 header = list(df)
 ##print(list(df))
-
 pp = PdfPages('plot_Kmeans.pdf')
 for i in header:
     for j in header:
         if(i != j):
             dfin = DataFrame(data,columns=[i,j])
             X = dfin.values
-            kmeans = KMeans(n_clusters=3).fit(X)
+            kmeans = KMeans(n_clusters=userScript.numberOfClusters).fit(X)
             centroids = kmeans.cluster_centers_
             print("x axis: "+i + " , y axis: " + j)
             print(centroids)
@@ -40,4 +38,3 @@ for i in header:
             plt.savefig(pp, format='pdf')
             plt.close()
 pp.close()
-

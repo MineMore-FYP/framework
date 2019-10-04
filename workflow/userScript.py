@@ -5,12 +5,13 @@ import sys
 #Workflow
 
 #input   location
+#inputDataset = "/home/rajini/FYP/testcsv/test.csv"
+inputDataset = "/home/amanda/FYP/testcsv/test.csv"
 
-#inputDataset = "/home/amanda/FYP/testcsv/test.csv"
-inputDataset = "/home/rajini/FYP/testcsv/Combined.csv"
 #specify output locatiion
-#outputDataset = "/home/amanda/FYP/testcsv/outputDataset.csv"
-outputDataset = "/home/rajini/Desktop/out.csv"
+#outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
+outputDataset = "/home/amanda/FYP/testcsv/out.csv"
+
 
 #SELECTION
 #select columns
@@ -20,6 +21,7 @@ selectColumns = ["GLOBALEVENTID","SQLDATE", "Year", "Actor2Code", "Actor2Name", 
 #select rows
 selectFromRow = OrderedDict()
 selectFromRow['Year'] = [2018, 2019]
+
 
 #CLEANING
 #Drop unique columns
@@ -91,7 +93,7 @@ userDefinedEncodeColumns = ["Actor2Code", "Actor2Name", "Actor2Geo_FullName"]
 
 #kmeans
 #selectedColumns1 = selectColumns - dropColumns
-number_of_clusters = 3
+numberOfClusters = 3
 
 #linear regression
 #selectedColumns2 = selectColumns - dropColumns

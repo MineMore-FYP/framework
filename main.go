@@ -233,6 +233,28 @@ func main() {
 	}
 	fmt.Println(sum)
 
+	//get starting number of cluster from user script
+	cmd3 := exec.Command("python", "-c", "from workflow import userScript; print userScript.startWithNumberOfClusters")
+	fmt.Println(cmd3.Args)
+	out3, err3 := cmd3.CombinedOutput()
+	if err3 != nil {
+		fmt.Println(err3)
+	}
+
+	startWithNumberOfClusters := string(out3)[:len(out3)-1]
+	fmt.Print(startWithNumberOfClusters)
+
+	//get starting number of cluster from user script
+	cmd4 := exec.Command("python", "-c", "from workflow import userScript; print userScript.endWithNumberOfClusters")
+	fmt.Println(cmd4.Args)
+	out4, err4 := cmd4.CombinedOutput()
+	if err4 != nil {
+		fmt.Println(err4)
+	}
+
+	endWithNumberOfClusters := string(out4)[:len(out4)-1]
+	fmt.Print(endWithNumberOfClusters)
+
 	/////////////////KMEANS////////////////
 	go pythonCall("workflow/mining/kmeans.py", output13)
 	//time.Sleep(120000 * time.Millisecond)

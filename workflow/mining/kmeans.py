@@ -1,7 +1,6 @@
 import pandas as pd
 import csv
 from pandas import DataFrame
-from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 import numpy as np
@@ -20,31 +19,6 @@ df = pd.DataFrame(data)
 ##print(df)
 header = list(df)
 ##print(list(df))
-<<<<<<< HEAD:framework/workflow/mining/kmeans.py
-pp = PdfPages('home/rajini/FYP/plots.pdf')
-for i in header:
-	for j in header:
-        	if(i != j):
-			dfin = DataFrame(data,columns=[i,j])
-		    	X = dfin.values
-		    	kmeans = KMeans(n_clusters=userScript.number_of_clusters).fit(X)
-		    	centroids = kmeans.cluster_centers_
-		    	print("x axis: "+i + " , y axis: " + j)
-		    	print(centroids)
-		    	print("\n")
-		    	#plt.scatter(df[i], df[j], c= kmeans.labels_.astype(float), s=50, alpha=0.5)
-		    	plt.scatter(X[:,0], X[:,1], c= kmeans.labels_, cmap='rainbow')
-		    	plt.xlabel(i)
-		    	plt.ylabel(j)
-		    	#plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
-		    	plt.scatter(centroids[:, 0], centroids[:, 1], c='black')
-		    	#plt.savefig("/home/rajini/FYP/plots/"+ i + "-" + j + ".png")
-		    	plt.savefig(pp, format='pdf')
-
-
-pp.close()
-
-=======
 pp = PdfPages('plot_Kmeans.pdf')
 for i in header:
     for j in header:
@@ -64,4 +38,3 @@ for i in header:
             plt.savefig(pp, format='pdf')
             plt.close()
 pp.close()
->>>>>>> master:workflow/mining/kmeans.py

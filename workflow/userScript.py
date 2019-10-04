@@ -7,13 +7,10 @@ import sys
 #input   location
 inputDataset = "/home/rajini/FYP/testcsv/test.csv"
 
-<<<<<<< HEAD
 #inputDataset = "/home/amanda/FYP/testcsv/test.csv"
 #inputDataset = "/home/rajini/FYP/testcsv/Combined.csv"
 inputDataset = "/home/rajini/FYP/testcsv/test.csv"
 
-=======
->>>>>>> interim_presentation
 #specify output locatiion
 outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
 
@@ -98,6 +95,7 @@ userDefinedEncodeColumns = ["Actor2Code", "Actor2Name", "Actor2Geo_FullName"]
 #kmeans
 #selectedColumns1 = selectColumns - dropColumns
 number_of_clusters = 3
+#number_of_clusters = [2,100]
 
 #number_of_clusters = [2,100]
 

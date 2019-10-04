@@ -25,11 +25,7 @@ for i in header:
         if(i != j):
             dfin = DataFrame(data,columns=[i,j])
             X = dfin.values
-<<<<<<< HEAD
             kmeans = KMeans(n_clusters=userScript.numberOfClusters).fit(X)
-=======
-            kmeans = KMeans(n_clusters=numberOfClusters).fit(X)
->>>>>>> interim_test
             centroids = kmeans.cluster_centers_
             print("x axis: "+i + " , y axis: " + j)
             print(centroids)

@@ -97,7 +97,7 @@ userDefinedEncodeColumns = ["Actor2Code", "Actor2Name", "Actor2Geo_FullName"]
 
 #kmeans
 #selectedColumns1 = selectColumns - dropColumns
-number_of_clusters = 3
+numberOfClusters = 3
 
 #number_of_clusters = [2,100]
 

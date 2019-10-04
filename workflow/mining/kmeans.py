@@ -25,7 +25,7 @@ for i in header:
         if(i != j):
             dfin = DataFrame(data,columns=[i,j])
             X = dfin.values
-            kmeans = KMeans(n_clusters=3).fit(X)
+            kmeans = KMeans(n_clusters=numberOfClusters).fit(X)
             centroids = kmeans.cluster_centers_
             print("x axis: "+i + " , y axis: " + j)
             print(centroids)

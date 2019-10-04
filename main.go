@@ -235,7 +235,7 @@ func main() {
 
 	//get starting number of cluster from user script
 	cmd3 := exec.Command("python", "-c", "from workflow import userScript; print userScript.startWithNumberOfClusters")
-	fmt.Println(cmd3.Args)
+	//fmt.Println(cmd3.Args)
 	out3, err3 := cmd3.CombinedOutput()
 	if err3 != nil {
 		fmt.Println(err3)
@@ -246,7 +246,7 @@ func main() {
 
 	//get starting number of cluster from user script
 	cmd4 := exec.Command("python", "-c", "from workflow import userScript; print userScript.endWithNumberOfClusters")
-	fmt.Println(cmd4.Args)
+	//fmt.Println(cmd4.Args)
 	out4, err4 := cmd4.CombinedOutput()
 	if err4 != nil {
 		fmt.Println(err4)
@@ -266,7 +266,6 @@ func main() {
 	fmt.Println("Linear Regression complete")
 
 	time.Sleep(60000 * time.Millisecond)
-
 }
 
 /*

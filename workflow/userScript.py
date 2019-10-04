@@ -6,13 +6,13 @@ import sys
 
 #input   location
 inputDataset = "/home/rajini/FYP/testcsv/test.csv"
-
 #inputDataset = "/home/amanda/FYP/testcsv/test.csv"
 #inputDataset = "/home/rajini/FYP/testcsv/Combined.csv"
-inputDataset = "/home/rajini/FYP/testcsv/test.csv"
 
 #specify output locatiion
 outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
+#outputDataset = "/home/amanda/FYP/testcsv/out.csv"
+
 
 #SELECTION
 #select columns

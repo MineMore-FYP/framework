@@ -7,7 +7,9 @@ import sys
 #input   location
 
 #inputDataset = "/home/amanda/FYP/testcsv/test.csv"
-inputDataset = "/home/rajini/FYP/testcsv/Combined.csv"
+#inputDataset = "/home/rajini/FYP/testcsv/Combined.csv"
+inputDataset = "/home/rajini/FYP/testcsv/test.csv"
+
 #specify output locatiion
 #outputDataset = "/home/amanda/FYP/testcsv/outputDataset.csv"
 outputDataset = "/home/rajini/Desktop/out.csv"
@@ -92,6 +94,8 @@ userDefinedEncodeColumns = ["Actor2Code", "Actor2Name", "Actor2Geo_FullName"]
 #kmeans
 #selectedColumns1 = selectColumns - dropColumns
 number_of_clusters = 3
+
+#number_of_clusters = [2,100]
 
 #linear regression
 #selectedColumns2 = selectColumns - dropColumns

@@ -5,7 +5,8 @@ import sys
 #Workflow
 
 #input   location
-inputDataset = "/home/rajini/FYP/testcsv/test.csv"
+#inputDataset = "/home/rajini/FYP/testcsv/test.csv"
+inputDataset = "/home/amanda/FYP/testcsv/test.csv"
 
 <<<<<<< HEAD
 #inputDataset = "/home/amanda/FYP/testcsv/test.csv"
@@ -15,7 +16,9 @@ inputDataset = "/home/rajini/FYP/testcsv/test.csv"
 =======
 >>>>>>> interim_presentation
 #specify output locatiion
-outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
+#outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
+outputDataset = "/home/amanda/FYP/testcsv/out.csv"
+
 
 #SELECTION
 #select columns
@@ -98,8 +101,11 @@ userDefinedEncodeColumns = ["Actor2Code", "Actor2Name", "Actor2Geo_FullName"]
 #kmeans
 #selectedColumns1 = selectColumns - dropColumns
 numberOfClusters = 3
+<<<<<<< HEAD
+=======
 
 #number_of_clusters = [2,100]
+>>>>>>> interim_test
 
 #linear regression
 #selectedColumns2 = selectColumns - dropColumns

@@ -2,12 +2,18 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 #import seaborn as seabornInstance
+<<<<<<< HEAD
+#works on scikit-learn (0.21.3)
+#if error(or version 0.17 etc) try from sklearn.cross_validation import train_test_split
+from sklearn.model_selection  import train_test_split
+=======
 
 #for sklearn version 0.21
 #if error
 #from sklearn.model_selection import train_test_split
 from sklearn.model_selection import train_test_split
 
+>>>>>>> interim_test
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 from matplotlib.backends.backend_pdf import PdfPages

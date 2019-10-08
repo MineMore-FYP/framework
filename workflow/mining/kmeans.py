@@ -27,9 +27,9 @@ for i in header:
             X = dfin.values
             kmeans = KMeans(n_clusters=userScript.numberOfClusters).fit(X)
             centroids = kmeans.cluster_centers_
-            print("x axis: "+i + " , y axis: " + j)
-            print(centroids)
-            print("\n")
+            #print("x axis: "+i + " , y axis: " + j)
+            #print(centroids)
+            #print("\n")
 
             plt.scatter(X[:,0], X[:,1], c= kmeans.labels_, cmap='rainbow')
             plt.xlabel(i)

@@ -29,3 +29,4 @@ for col in columnNames:
     #print(encodedData)
 
 df.to_csv (sys.argv[1], index = False, header=True)
+print("Encoding done!")

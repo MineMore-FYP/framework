@@ -5,18 +5,17 @@ import sys
 #Workflow
 
 #input   location
-<<<<<<< HEAD
 #inputDataset = "/home/rajini/FYP/testcsv/test.csv"
 inputDataset = "/home/amanda/FYP/testcsv/test.csv"
-=======
-inputDataset = "/home/rajini/FYP/testcsv/test.csv"
+
+#inputDataset = "/home/rajini/FYP/testcsv/test.csv"
 #inputDataset = "/home/amanda/FYP/testcsv/test.csv"
->>>>>>> 097640461f4b1af7631cbfd69b223731e2674b39
+
 #inputDataset = "/home/rajini/FYP/testcsv/Combined.csv"
 
 #specify output locatiion
-outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
-#outputDataset = "/home/amanda/FYP/testcsv/out.csv"
+#outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
+outputDataset = "/home/amanda/FYP/testcsv/out.csv"
 
 
 #SELECTION

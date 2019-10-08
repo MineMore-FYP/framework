@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"strconv"
 
 	//"io"
 	"log"
@@ -23,6 +24,14 @@ func work(messages chan<- string) {
 
 func pythonCall(progName string, dataset string) {
 	cmd := exec.Command("python3", progName, dataset)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	log.Println(cmd.Run())
+	//time.Sleep(2 * time.Millisecond)
+}
+
+func pythonCallOneParam(progName string, dataset string, para string) {
+	cmd := exec.Command("python3", progName, dataset, para)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	log.Println(cmd.Run())
@@ -227,12 +236,6 @@ func main() {
 
 	///////////////////////////*****************MINING************************////////////////////////
 
-	sum := 0
-	for i := 0; i < 10; i++ {
-		sum += i
-	}
-	fmt.Println(sum)
-
 	//get starting number of cluster from user script
 	cmd3 := exec.Command("python", "-c", "from workflow import userScript; print userScript.startWithNumberOfClusters")
 	//fmt.Println(cmd3.Args)
@@ -242,7 +245,11 @@ func main() {
 	}
 
 	startWithNumberOfClusters := string(out3)[:len(out3)-1]
-	fmt.Print(startWithNumberOfClusters)
+	fmt.Println(startWithNumberOfClusters)
+	startWithNumberOfClustersInt, err5 := strconv.Atoi(startWithNumberOfClusters)
+	if err5 == nil {
+		fmt.Println(startWithNumberOfClustersInt)
+	}
 
 	//get starting number of cluster from user script
 	cmd4 := exec.Command("python", "-c", "from workflow import userScript; print userScript.endWithNumberOfClusters")
@@ -253,19 +260,31 @@ func main() {
 	}
 
 	endWithNumberOfClusters := string(out4)[:len(out4)-1]
-	fmt.Print(endWithNumberOfClusters)
+	fmt.Println(endWithNumberOfClusters)
+	endWithNumberOfClustersInt, err6 := strconv.Atoi(endWithNumberOfClusters)
+	if err6 == nil {
+		fmt.Println(endWithNumberOfClustersInt)
+	}
 
-	/////////////////KMEANS////////////////
-	go pythonCall("workflow/mining/kmeans.py", output13)
-	//time.Sleep(120000 * time.Millisecond)
-	fmt.Println("Kmeans complete")
+	for i := startWithNumberOfClustersInt; i <= endWithNumberOfClustersInt; i++ {
+		/////////////////KMEANS////////////////
+		iStr := strconv.Itoa(i)
+		go pythonCallOneParam("workflow/mining/kmeans.py", output13, iStr)
+		//go pythonCall("workflow/mining/kmeans.py", output13)
+		time.Sleep(150000 * time.Millisecond)
+		fmt.Println("Kmeans complete ", i)
+	}
+
+	fmt.Println("Kmeans completed for all iterations")
 
 	//////////////////LinearRegression/////////////////
-
-	go pythonCall("workflow/mining/linearRegression.py", output13)
-	fmt.Println("Linear Regression complete")
+	/*
+		go pythonCall("workflow/mining/linearRegression.py", output13)
+		time.Sleep(60000 * time.Millisecond)
+	  fmt.Println("Linear Regression complete")*/
 
 	time.Sleep(60000 * time.Millisecond)
+	fmt.Println("Workflow Complete")
 }
 
 /*

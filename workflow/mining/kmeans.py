@@ -1,3 +1,4 @@
+import sys
 import pandas as pd
 import csv
 from pandas import DataFrame
@@ -14,18 +15,25 @@ import userScript
 
 # making data frame from csv file
 
+clusters=sys.argv[2]
+print(clusters)
+clustersInt=int(clusters)
+
 data = pd.read_csv(userScript.outputDataset,engine = 'python')
 df = pd.DataFrame(data)
 ##print(df)
 header = list(df)
 ##print(list(df))
-pp = PdfPages('plot_Kmeans.pdf')
+
+loc = userScript.plotLocation
+pp = PdfPages(loc + '/plot_Kmeans_' + clusters + '.pdf')
 for i in header:
     for j in header:
         if(i != j):
             dfin = DataFrame(data,columns=[i,j])
             X = dfin.values
-            kmeans = KMeans(n_clusters=userScript.numberOfClusters).fit(X)
+            #kmeans = KMeans(n_clusters=userScript.numberOfClusters).fit(X)
+            kmeans = KMeans(n_clusters=clustersInt).fit(X)
             centroids = kmeans.cluster_centers_
             #print("x axis: "+i + " , y axis: " + j)
             #print(centroids)

@@ -294,6 +294,12 @@ func main() {
 		time.Sleep(60000 * time.Millisecond)
 	  fmt.Println("Linear Regression complete")*/
 
+	//////////////////KNN///////////////// - TODO: loop
+
+	go pythonCall("workflow/mining/KNN.py", output13)
+	time.Sleep(60000 * time.Millisecond)
+	fmt.Println("KNN complete")
+
 	time.Sleep(60000 * time.Millisecond)
 	fmt.Println("Workflow Complete")
 }

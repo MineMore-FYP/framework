@@ -101,6 +101,12 @@ endWithNumberOfClusters = 8
 plotLocation = "/home/rajini/FYP/testcsv"
 
 
+#KNN
+#define targetColumn
+targetColumnName = "QuadClass"
+targetColumn = ["QuadClass"]
+numberOfneighbours = 5
+
 #linear regression
 #selectedColumns2 = selectColumns - dropColumns
 

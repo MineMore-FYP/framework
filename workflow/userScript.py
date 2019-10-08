@@ -97,6 +97,9 @@ userDefinedEncodeColumns = ["Actor2Code", "Actor2Name", "Actor2Geo_FullName"]
 numberOfClusters = 3
 startWithNumberOfClusters = 2
 endWithNumberOfClusters = 8
+#input   location
+plotLocation = "/home/rajini/FYP/testcsv"
+
 
 #linear regression
 #selectedColumns2 = selectColumns - dropColumns

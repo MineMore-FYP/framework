@@ -265,7 +265,18 @@ func main() {
 	if err6 == nil {
 		fmt.Println(endWithNumberOfClustersInt)
 	}
+	/*
+		//get starting number of cluster from user script
+		cmd7 := exec.Command("python", "-c", "from workflow import userScript; print userScript.plotLocation")
+		//fmt.Println(cmd4.Args)
+		out7, err7 := cmd7.CombinedOutput()
+		if err7 != nil {
+			fmt.Println(err7)
+		}
 
+		endWithNumberOfClusters := string(out4)[:len(out4)-1]
+		fmt.Println(endWithNumberOfClusters)
+	*/
 	for i := startWithNumberOfClustersInt; i <= endWithNumberOfClustersInt; i++ {
 		/////////////////KMEANS////////////////
 		iStr := strconv.Itoa(i)

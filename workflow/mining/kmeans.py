@@ -24,7 +24,9 @@ df = pd.DataFrame(data)
 ##print(df)
 header = list(df)
 ##print(list(df))
-pp = PdfPages('plot_Kmeans.pdf')
+
+loc = userScript.plotLocation
+pp = PdfPages(loc + '/plot_Kmeans_' + clusters + '.pdf')
 for i in header:
     for j in header:
         if(i != j):

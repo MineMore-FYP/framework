@@ -35,12 +35,12 @@ for i in header:
 
             regressor = LinearRegression()
             regressor.fit(X_train, y_train) #training the algorithm
-            print("x axis: "+i + " , y axis: " + j)
+            #print("x axis: "+i + " , y axis: " + j)
             #To retrieve the intercept:
-            print(regressor.intercept_)
+            #print(regressor.intercept_)
             #For retrieving the slope:
-            print(regressor.coef_)
-            print('\n')
+            #print(regressor.coef_)
+            #print('\n')
 
             y_pred = regressor.predict(X_test)
 
@@ -48,10 +48,10 @@ for i in header:
 
 ##            print(df)
 
-            print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
-            print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
-            print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
-            print('\n')
+            #print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
+            #print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
+            #print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
+            #print('\n')
             plt.scatter(X_test, y_test,  color='gray')
             plt.xlabel(i)
             plt.ylabel(j)

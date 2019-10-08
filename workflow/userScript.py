@@ -5,10 +5,18 @@ import sys
 #Workflow
 
 #input   location
-inputDataset = "/home/rajini/FYP/testcsv/test.csv"
+#inputDataset = "/home/rajini/FYP/testcsv/test.csv"
+inputDataset = "/home/amanda/FYP/testcsv/test.csv"
+
+#inputDataset = "/home/rajini/FYP/testcsv/test.csv"
+#inputDataset = "/home/amanda/FYP/testcsv/test.csv"
+
+#inputDataset = "/home/rajini/FYP/testcsv/Combined.csv"
 
 #specify output locatiion
-outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
+#outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
+outputDataset = "/home/amanda/FYP/testcsv/out.csv"
+
 
 #SELECTION
 #select columns
@@ -90,7 +98,13 @@ userDefinedEncodeColumns = ["Actor2Code", "Actor2Name", "Actor2Geo_FullName"]
 
 #kmeans
 #selectedColumns1 = selectColumns - dropColumns
-number_of_clusters = 3
+numberOfClusters = 3
+
+startWithNumberOfClusters = 2
+endWithNumberOfClusters = 8
+#input   location
+plotLocation = "/home/rajini/FYP/testcsv"
+
 
 #linear regression
 #selectedColumns2 = selectColumns - dropColumns

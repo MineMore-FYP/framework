@@ -282,10 +282,10 @@ func main() {
 		iStr := strconv.Itoa(i)
 		go pythonCallOneParam("workflow/mining/kmeans.py", output13, iStr)
 		//go pythonCall("workflow/mining/kmeans.py", output13)
-		time.Sleep(150000 * time.Millisecond)
+		//time.Sleep(150000 * time.Millisecond)
 		fmt.Println("Kmeans complete ", i)
 	}
-
+	time.Sleep(60000 * time.Millisecond)
 	fmt.Println("Kmeans completed for all iterations")
 
 	//////////////////LinearRegression/////////////////

@@ -65,6 +65,20 @@ func main() {
 	outputDataset := string(out1)[:len(out1)-1]
 	//fmt.Print(outputDataset)
 
+	//get wait time from user script
+	cmdWT := exec.Command("python", "-c", "from workflow import userScript; print userScript.waitTime")
+	outWT, errWT := cmdWT.CombinedOutput()
+	if errWT != nil {
+		fmt.Println(errWT)
+	}
+
+	waitTimeUS := string(outWT)[:len(outWT)-1]
+	fmt.Println(waitTimeUS)
+	waitTime, errWTInt := strconv.Atoi(waitTimeUS)
+	if errWTInt == nil {
+		fmt.Println(waitTime)
+	}
+
 	///////////////////////////*****************SELECTION************************////////////////////////
 
 	//select user defined cols
@@ -324,13 +338,11 @@ func main() {
 		time.Sleep(60000 * time.Millisecond)
 	  fmt.Println("Linear Regression complete")*/
 
-
 	//////////////////KNN///////////////// - TODO: loop
 
 	go pythonCall("workflow/mining/KNN.py", output13)
 	time.Sleep(60000 * time.Millisecond)
 	fmt.Println("KNN complete")
-
 
 	fmt.Println("test27")
 

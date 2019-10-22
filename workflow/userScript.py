@@ -5,17 +5,14 @@ import sys
 #Workflow
 
 #input   location
-#inputDataset = "/home/rajini/FYP/testcsv/test.csv"
-inputDataset = "/home/amanda/FYP/testcsv/test.csv"
-
-#inputDataset = "/home/rajini/FYP/testcsv/test.csv"
+inputDataset = "/home/rajini/FYP/testcsv/test.csv"
 #inputDataset = "/home/amanda/FYP/testcsv/test.csv"
 
 #inputDataset = "/home/rajini/FYP/testcsv/Combined.csv"
 
 #specify output locatiion
-#outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
-outputDataset = "/home/amanda/FYP/testcsv/out.csv"
+outputDataset = "/home/rajini/FYP/testcsv/outputDataset.csv"
+#outputDataset = "/home/amanda/FYP/testcsv/out.csv"
 
 #wait time between each step of workflow (in milli seconds)
 waitTime = 10000
